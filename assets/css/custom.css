@@ -1,0 +1,4 @@
+.container {
+  max-width: 2000px;  /* make it wider */
+  padding: 2rem;       /* optional: give some breathing room */
+}

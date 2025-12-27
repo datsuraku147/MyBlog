@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codereview on Crong&#39;s Blog</title>
+    <link>http://localhost:1313/tags/codereview/</link>
+    <description>Recent content in Codereview on Crong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/codereview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Birthday Card - Pragyan CTF 2025</title>
+      <link>http://localhost:1313/timeline/birthday-card/</link>
+      <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/birthday-card/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.&lt;/p&gt;
+&lt;h2 id=&#34;first-glance&#34;&gt;First glance&lt;/h2&gt;
+&lt;p&gt;When I went to the target site, &lt;code&gt;https://birthday.ctf.prgy.in/&lt;/code&gt;, I saw this:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/BirthdayCard-0.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source &lt;code&gt;appy.py&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Ben 10 - Srdnlen CTF 2025</title>
+      <link>http://localhost:1313/timeline/ben-10/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/ben-10/</guid>
+      
+      <description>&lt;h3 id=&#34;you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge&#34;&gt;You can directly go to &lt;a href=&#34;#solution&#34;&gt;Solution&lt;/a&gt; if you don&amp;rsquo;t want to see my process for solving this challenge.&lt;/h3&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;This is the first time I&amp;rsquo;ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn&amp;rsquo;t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.&lt;/p&gt;
+&lt;h2 id=&#34;blackbox-approach&#34;&gt;BlackBox approach&lt;/h2&gt;
+&lt;h3 id=&#34;first-glance&#34;&gt;First Glance&lt;/h3&gt;
+&lt;p&gt;When going to the target site I got an option to either &lt;code&gt;Signup, Login, or Forgot Password&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
