@@ -1,435 +1,95 @@
-<!DOCTYPE html>
-<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
-<meta http-equiv="content-type" content="text/html">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title itemprop="name">Ben 10 - Srdnlen CTF 2025 | Crong&#39;s Blog</title>
-<meta property="og:title" content="Ben 10 - Srdnlen CTF 2025 | Crong&#39;s Blog" />
-<meta name="twitter:title" content="Ben 10 - Srdnlen CTF 2025 | Crong&#39;s Blog" />
-<meta itemprop="name" content="Ben 10 - Srdnlen CTF 2025 | Crong&#39;s Blog" />
-<meta name="application-name" content="Ben 10 - Srdnlen CTF 2025 | Crong&#39;s Blog" />
-<meta property="og:site_name" content="" />
-
-<meta name="description" content="Datsuraku&#39;s blog">
-<meta itemprop="description" content="Datsuraku&#39;s blog" />
-<meta property="og:description" content="Datsuraku&#39;s blog" />
-<meta name="twitter:description" content="Datsuraku&#39;s blog" />
-
-<meta property="og:locale" content="en-us" />
-<meta name="language" content="en-us" />
-
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/timeline/ben-10/" title="" />
-
-
-
-
-
-
-<meta name="generator" content="Hugo 0.153.2">
-
-    
-    <meta property="og:url" content="http://localhost:1313/timeline/ben-10/">
-  <meta property="og:site_name" content="Crong&#39;s Blog">
-  <meta property="og:title" content="Ben 10 - Srdnlen CTF 2025">
-  <meta property="og:description" content="You can directly go to Solution if you don’t want to see my process for solving this challenge. Introduction This is the first time I’ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn’t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.
-BlackBox approach First Glance When going to the target site I got an option to either Signup, Login, or Forgot Password">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="timeline">
-    <meta property="article:published_time" content="2025-01-23T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-01-23T00:00:00+00:00">
-    <meta property="article:tag" content="Web">
-    <meta property="article:tag" content="Codereview">
-
-
-    
-    
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Ben 10 - Srdnlen CTF 2025">
-  <meta name="twitter:description" content="You can directly go to Solution if you don’t want to see my process for solving this challenge. Introduction This is the first time I’ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn’t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.
-BlackBox approach First Glance When going to the target site I got an option to either Signup, Login, or Forgot Password">
-
-
-    
-
-    <link rel="canonical" href="http://localhost:1313/timeline/ben-10/">
-    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
-    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
-
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-
-
-
-<link rel="manifest" href="http://localhost:1313/site.webmanifest">
-
-<meta name="msapplication-config" content="/browserconfig.xml">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#434648">
-    <meta name="color-scheme" content="light dark">
-
-    
-    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
-
-    
-    
-</head>
-<body data-theme = "dark" class="notransition">
-
-<script src="/js/theme.js"></script>
-
-<div class="navbar" role="navigation">
-    <nav class="menu" aria-label="Main Navigation">
-        <a href="http://localhost:1313/" class="logo">
-            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
-viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
-stroke-linejoin="round" class="feather feather-home">
-<title>Home</title>
-<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
-<polyline points="9 22 9 12 15 12 15 22"></polyline>
-</svg>
-        </a>
-        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
-        <label for="menu-trigger">
-            <span class="menu-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
-            </span>
-        </label>
-
-        <div class="trigger">
-            <ul class="trigger-container">
-                
-                
-                <li>
-                    <a class="menu-link " href="/categories/">
-                        Categories
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/tags/">
-                        Tags
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link active" href="/timeline/">
-                        Timeline
-                    </a>
-                    
-                </li>
-                
-                <li>
-                    <a class="menu-link " href="/crong/">
-                        Me???
-                    </a>
-                    
-                </li>
-                
-                <li class="menu-separator">
-                    <span>|</span>
-                </li>
-                
-                
-            </ul>
-            <a id="mode" href="#">
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
-<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
-            </a>
-        </div>
-    </nav>
-</div>
-
-<div class="wrapper post">
-    <main class="page-content" aria-label="Content">
-        <article>
-            <header class="header">
-                <h1 class="header-title">Ben 10 - Srdnlen CTF 2025</h1>
-                
-                
-                
-                <div class="post-meta">
-                    <time datetime="2025-01-23T00:00:00&#43;00:00" itemprop="datePublished"> Jan 23, 2025 </time>
-                </div>
-                
-            </header>
-            
-    
-    <details class="toc" ZgotmplZ>
-        <summary><b>Table of Contents</b></summary>
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge">You can directly go to Solution if you don’t want to see my process for solving this challenge.</a></li>
-      </ul>
-    </li>
-    <li><a href="#introduction">Introduction</a></li>
-    <li><a href="#blackbox-approach">BlackBox approach</a>
-      <ul>
-        <li><a href="#first-glance">First Glance</a></li>
-        <li><a href="#signing-up-with-admin-username">Signing up with admin username</a></li>
-        <li><a href="#forgot-password">Forgot Password</a></li>
-      </ul>
-    </li>
-    <li><a href="#whitebox-approach">WhiteBox approach</a>
-      <ul>
-        <li><a href="#looking-for-the-admin-username">Looking for the Admin username</a></li>
-        <li><a href="#apppy">App.py</a></li>
-      </ul>
-    </li>
-    <li><a href="#solution">Solution</a></li>
-    <li><a href="#lessons-learned">Lessons Learned</a></li>
-  </ul>
-</nav>
-    </details>
-            <div class="page-content">
-                <h3 id="you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge">You can directly go to <a href="#solution">Solution</a> if you don&rsquo;t want to see my process for solving this challenge.</h3>
-<h2 id="introduction">Introduction</h2>
-<p>This is the first time I&rsquo;ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn&rsquo;t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.</p>
-<h2 id="blackbox-approach">BlackBox approach</h2>
-<h3 id="first-glance">First Glance</h3>
-<p>When going to the target site I got an option to either <code>Signup, Login, or Forgot Password</code></p>
-<p><img src="/images/Ben10-0.png" alt="Image Description">
-<em><strong>Figure 1</strong></em></p>
-<p>Since I don&rsquo;t have an account yet, I signed up first. And after I logged in using  the account I created I was taken to a page that has a bunch of different images.</p>
-<p><img src="/images/Ben10-1.png" alt="Image Description">
-<em><strong>Figure 2</strong></em></p>
-<p>Clicking directly on an image redirects me to a page of the image I clicked. But for the last(10th) image I got an error saying: <code>Only Admins can access Ben10!</code></p>
-<p><img src="/images/Ben10-2.png" alt="Image Description">
-<em><strong>Figure 3</strong></em></p>
-<p><strong>With this I assumed that I needed to takeover an admin account named <code>admin</code> and that the 10th image would give me the flag.</strong></p>
-<h3 id="signing-up-with-admin-username">Signing up with admin username</h3>
-<p>But there is no need for a takeover if we can just sign up as an admin right?
-So I tried to sign up using <code>admin</code> as a <code>username</code> but had no luck, so I moved to another feature.</p>
-<p><img src="/images/Ben10-3.png" alt="Image Description">
-<em><strong>Figure 4</strong></em></p>
-<h3 id="forgot-password">Forgot Password</h3>
-<p>Trying this feature immediately gives a red flag. It gives us a reset token after giving a <code>username</code> I want to recover</p>
-<p><img src="/images/Ben10-4.png" alt="Image Description">
-<em><strong>Figure 5</strong></em></p>
-<p>Then clicking the <code>Reset your password</code> redirects me to a page that asks for a <code>Username</code> and a <code>New Password</code></p>
-<h4 id="how-it-works">How it works?</h4>
-<ol>
-<li>Asks for a <code>username</code></li>
-<li>Gives a <code>reset token</code></li>
-<li>Asks again for a <code>username</code> and a <code>new password</code></li>
-</ol>
-<p>This was a good indicator for me since it means that I can change whose <code>password</code> I want to change by giving a <code>username</code> I don&rsquo;t own in the last step.</p>
-<p>So I did&hellip;</p>
-<p><img src="/images/Ben10-5.png" alt="Image Description">
-<em><strong>Figure 6</strong></em></p>
-<p>What a bummer! I thought it was going to be easy XD</p>
-<p>At least this tells me that it&rsquo;s either there&rsquo;s no username <code>admin</code> or the system just gives this response instead of a <code>403</code> to mislead players :P</p>
-<p>So to test my theory I created a new user and tried to change its password using the <code>Forgot Password</code> feature</p>
-<p><img src="/images/Ben10-6.png" alt="Image Description">
-<em><strong>Figure 7</strong></em></p>
-<p>Welp, it seems that there&rsquo;s a permission check&hellip;with this I assumed that we can&rsquo;t use a different username for the first and third step because of the permission check and that the <code>admin</code> username doesn&rsquo;t exist since we didn&rsquo;t get a <code>user not found</code> error.
-But, we are sure that there&rsquo;s an <code>admin</code> because of the error we got from trying to access the 10th image (<em><strong>Figure 3</strong></em>) And the flow is still sketchy to me&hellip;</p>
-<p>Since we were given a source code my next idea is that maybe the <code>admin username</code> is being leaked there.</p>
-<h2 id="whitebox-approach">WhiteBox approach</h2>
-<h3 id="looking-for-the-admin-username">Looking for the Admin username</h3>
-<p>Actually, the reason why I tried doing a <code>Blackbox</code> approach first is because I was scared to look at the source code because I&rsquo;m not really good at doing code reviews XD</p>
-<p>Continuing&hellip;</p>
-<p>The first thing I did was to see if the <code>admin username</code> is being leaked somewhere in the code, and it didn&rsquo;t take a lot of time to find it. When I looked at <code>home.html</code> there it was the <code>secret admin username</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display:none;&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin_data&#34;</span>&gt; {admin_username} &lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>So I checked the page source back in the target site and finally</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">h1</span>&gt; Welcome, dats&lt;/<span style="color:#f92672">h1</span>&gt;
-</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">h2</span>&gt; Do you like the aliens on my Omnitrix?&lt;/<span style="color:#f92672">h2</span>&gt;
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!-- secret admin username --&gt;</span>
-</span></span><span style="display:flex;"><span> &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;=display:none;&#34;</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;admin_data&#34;</span>&gt;admin^dats^1c4cdf3c26&lt;/<span style="color:#f92672">div</span>&gt;
-</span></span></code></pre></div><p>so we now have the <code>admin username</code> &ndash;&gt; <code>admin^dats^1c4cdf3c26</code>. The next step is going to be the last right? I can just request a <code>reset token</code> using the <code>admin^dats^1c4cdf3c26</code> username and we&rsquo;re done, right??? <del>Goodnight and 8 hours of sleep let&rsquo;s go :)</del></p>
-<p>Yeah&hellip;no!!!</p>
-<p><img src="/images/Ben10-7.png" alt="Image Description">
-<em><strong>Figure 8</strong></em></p>
-<p>At this point, I just said to myself that I have the code so I should just find the issue in the code so I don&rsquo;t waste more time XD</p>
-<h3 id="apppy">App.py</h3>
-<p>Since I&rsquo;m quite familiar with Python understanding the code was manageable(thankfully)</p>
-<p>I started at the top instead of directly going to the function where the <code>resetting of password</code> is happening. This is because I thought it would be good practice for me to read and understand the code that others wrote :D</p>
-<p>I immediately saw the reason why I was getting the errors before</p>
-<h4 id="register-shortened-code">/register (shortened code)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> username<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;admin&#39;</span>) <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;^&#39;</span> <span style="color:#f92672">in</span> username:
-</span></span><span style="display:flex;"><span>    flash(<span style="color:#e6db74">&#34;I don&#39;t like admins&#34;</span>, <span style="color:#e6db74">&#34;error&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#39;register.html&#39;</span>)
-</span></span></code></pre></div><h4 id="reset_password-shortened-code">/reset_password (shortened code)</h4>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> username<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;admin&#39;</span>):
-</span></span><span style="display:flex;"><span>    flash(<span style="color:#e6db74">&#34;Admin users cannot request a reset token.&#34;</span>, <span style="color:#e6db74">&#34;error&#34;</span>)
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> render_template(<span style="color:#e6db74">&#39;reset_password.html&#39;</span>)
-</span></span></code></pre></div><p>It checks if the input we give starts with <code>&quot;admin&quot;</code> if it is then it will trigger the error.</p>
-<h4 id="forgot_password-shortened-code">/forgot_password (shortened code)</h4>
-<p>Please check the <code>comments</code> in the code for the explanation :)</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># It checks if the username doesn&#39;t start with admin</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> username<span style="color:#f92672">.</span>startswith(<span style="color:#e6db74">&#39;admin&#39;</span>):
-</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> get_reset_token_for_user(username) <span style="color:#75715e"># username = request.form[&#39;username&#39;]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If TRUE it checks if the reset_token is valid and will be used for the inputted username</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> token <span style="color:#f92672">and</span> token[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> reset_token: <span style="color:#75715e"># reset_token = request.form[&#39;reset_token&#39;]</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If TRUE then it proceeds to reset the password of the variable username</span>
-</span></span><span style="display:flex;"><span>        update_password(username, new_password)
-</span></span><span style="display:flex;"><span>        flash(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Password reset successfully.&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> redirect(url_for(<span style="color:#e6db74">&#39;login&#39;</span>))
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If FALSE then it gives out an error &#34;Invalid reset token for user.&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        flash(<span style="color:#e6db74">&#34;Invalid reset token for user.&#34;</span>, <span style="color:#e6db74">&#34;error&#34;</span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If however the username starts with admin</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># It splits the username using `^` as a separator</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Then it gets the second index [1] of the array. Note: the first index is [0]</span>
-</span></span><span style="display:flex;"><span>    username <span style="color:#f92672">=</span> username<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;^&#39;</span>)[<span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span>    token <span style="color:#f92672">=</span> get_reset_token_for_user(username)
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Then it checks if the reset_token is valid and will be used for the inputted username</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> token <span style="color:#f92672">and</span> token[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> reset_token:
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If TRUE then it proceeds to reset the password however...</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># IMPORTANT: instead of using &#34;username&#34; it uses &#34;request.form[&#39;username&#39;]&#34;</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># This means that the code will change the password of the unsplit username</span>
-</span></span><span style="display:flex;"><span>        update_password(request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#39;username&#39;</span>], new_password)
-</span></span><span style="display:flex;"><span>        flash(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Password reset successfully.&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>)
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> redirect(url_for(<span style="color:#e6db74">&#39;login&#39;</span>))
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        flash(<span style="color:#e6db74">&#34;Invalid reset token for user.&#34;</span>, <span style="color:#e6db74">&#34;error&#34;</span>)
-</span></span></code></pre></div><p>It might seem confusing so I&rsquo;ll try to show what&rsquo;s going to happen clearly.</p>
-<h4 id="code-flow">Code Flow</h4>
-<h5 id="remember-how-does-forgot-password-work">Remember: How does <code>Forgot Password</code> work?</h5>
-<ol>
-<li>Asks for a <code>username</code></li>
-<li>Gives a <code>reset token</code></li>
-<li>Asks again for a <code>username</code> and a <code>new password</code></li>
-</ol>
-<p><strong>REMINDER!!! We are already in the third step here(<code>/reset_password</code> is responsible for the first and second step)</strong></p>
-<p>Let&rsquo;s say that we used <code>dats</code> in the first step and <code>admin^dats^1c4cdf3c26</code> for the third step</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># admin^dats^1c4cdf3c26 --&gt; dats</span>
-</span></span><span style="display:flex;"><span>        username <span style="color:#f92672">=</span> username<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#39;^&#39;</span>)[<span style="color:#ae81ff">1</span>] 
-</span></span><span style="display:flex;"><span>        token <span style="color:#f92672">=</span> get_reset_token_for_user(username)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># True since the username is now dats and we used dats in the first step</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> token <span style="color:#f92672">and</span> token[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> reset_token:
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># Instead of using the updated value of the username variable --&gt; &#34;dats&#34;</span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># It uses the value I gave in the third step --&gt; &#34;admin^dats^1c4cdf3c26&#34;</span>
-</span></span><span style="display:flex;"><span>            update_password(request<span style="color:#f92672">.</span>form[<span style="color:#e6db74">&#39;username&#39;</span>], new_password)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># And this results in the system changing </span>
-</span></span><span style="display:flex;"><span>            <span style="color:#75715e"># The password of the admin instead of my account :P</span>
-</span></span><span style="display:flex;"><span>            
-</span></span><span style="display:flex;"><span>            flash(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Password reset successfully.&#34;</span>, <span style="color:#e6db74">&#34;success&#34;</span>)
-</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> redirect(url_for(<span style="color:#e6db74">&#39;login&#39;</span>))
-</span></span></code></pre></div><h2 id="solution">Solution</h2>
-<p>All in all, to takeover the account of the <code>admin</code>  all we need to do is:</p>
-<ol>
-<li>Leak the <code>username</code> of the <code>admin</code> in our case it&rsquo;s &ndash;&gt; <code>admin^dats^1c4cdf3c26</code></li>
-<li>Request for a <code>reset token</code> using a <code>username</code> we own &ndash;&gt; <code>dats</code></li>
-<li>Get the <code>reset token</code> and proceed to the next page</li>
-<li>Use <code>admin^dats^1c4cdf3c26</code> in the <code>username form</code></li>
-<li>Login using the new credentials of the <code>admin</code> and check the 10th image.</li>
-</ol>
-<p><code>Flag:srdnlen{b3n_l0v3s_br0k3n_4cc355_c0ntr0l_vulns}</code></p>
-<p><img src="/images/Ben10-8.png" alt="Image Description">
-<em><strong>Figure 9</strong></em></p>
-<h2 id="lessons-learned">Lessons Learned</h2>
-<ul>
-<li>
-<p>Always doubt your assumptions. Because I wasn&rsquo;t able to change the password of my second account, I assumed that the permission check was there, not thinking to double-check with the username of the admin when I found it. If I did, then I would have already solved the challenge without even looking at the code.</p>
-<p>It&rsquo;s still a win though since I got out of my comfort zone. But in the wild, where we normally don&rsquo;t have the source code handed to us. Doubting our assumptions is definitely beneficial :D</p>
-</li>
-<li>
-<p>The result of reviewing the code was better than I expected. At first, I thought there was no way that I would understand what it was doing but thankfully most of the lines are pretty self-explanatory, and with a little bit <del>(a lot)</del> of Googling, I was able to understand how it was working.</p>
-<ul>
-<li>
-<p>For example, I had no idea at first what the method <code>split</code> was doing, so I tried it myself and figured out that it separates the string based on what the separator is and puts them in an array</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> username <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ttt^ggg^sss&#34;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> username <span style="color:#f92672">=</span> username<span style="color:#f92672">.</span>split(<span style="color:#e6db74">&#34;^&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> username[<span style="color:#ae81ff">1</span>]
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;ggg&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> username[<span style="color:#ae81ff">2</span>]
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;sss&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> username[<span style="color:#ae81ff">3</span>]
-</span></span><span style="display:flex;"><span>Traceback (most recent call last):
-</span></span><span style="display:flex;"><span>File <span style="color:#e6db74">&#34;&lt;stdin&gt;&#34;</span>, line <span style="color:#ae81ff">1</span>, <span style="color:#f92672">in</span> <span style="color:#f92672">&lt;</span>module<span style="color:#f92672">&gt;</span>
-</span></span><span style="display:flex;"><span><span style="color:#a6e22e">IndexError</span>: list index out of range <span style="color:#75715e">## I was even reminded that the index starts in [0] lol</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span> username[<span style="color:#ae81ff">0</span>]
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;ttt&#39;</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">&gt;&gt;&gt;</span>
-</span></span></code></pre></div></li>
-</ul>
-</li>
-</ul>
-<p>Thanks to the Sardinia Len team for creating the CTF.</p>
-<p>I hope you enjoyed this write-up. Thanks for reading and have a nice day :D</p>
-<p><em><strong>-Datsuraku147</strong></em></p>
-
-            </div>
-        </article></main>
-</div>
-<footer class="footer">
-    <span class="footer_item"> </span>
-    &nbsp;
-
-    <div class="footer_social-icons">
-<a href="http://github.com/datsuraku147" target="_blank" rel="noopener noreferrer me"
-    title="Github">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-    </path>
-</svg>
-</a>
-<a href="https://x.com/MDatsuraku" target="_blank" rel="noopener noreferrer me"
-    title="Twitter">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path
-        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
-    </path>
-</svg>
-</a>
-<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
-    title="Rss">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-    stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4 11a9 9 0 0 1 9 9" />
-    <path d="M4 4a16 16 0 0 1 16 16" />
-    <circle cx="5" cy="19" r="1" />
-</svg>
-</a>
-</div>
-    <small class="footer_copyright">
-        © 2025 Datsuraku.
-        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
-    </small>
-</footer><a href="#" title="Go to top" id="totop">
-    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
-    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
-</svg>
-
-</a>
-
-
-    
-
-
-
-
-
-
-    
-    <script async src="http://localhost:1313/js/main.js" ></script>
-
-    
-
-</body>
-</html>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Ben 10 - Srdnlen CTF 2025 | Crong's Blog</title><meta property="og:title" content="Ben 10 - Srdnlen CTF 2025 | Crong's Blog"><meta name=twitter:title content="Ben 10 - Srdnlen CTF 2025 | Crong's Blog"><meta itemprop=name content="Ben 10 - Srdnlen CTF 2025 | Crong's Blog"><meta name=application-name content="Ben 10 - Srdnlen CTF 2025 | Crong's Blog"><meta property="og:site_name" content><meta name=description content="Datsuraku's blog"><meta itemprop=description content="Datsuraku's blog"><meta property="og:description" content="Datsuraku's blog"><meta name=twitter:description content="Datsuraku's blog"><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en href=https://blog.datsuraku147.org/timeline/ben-10/ title><meta name=generator content="Hugo 0.153.2"><meta property="og:url" content="https://blog.datsuraku147.org/timeline/ben-10/"><meta property="og:site_name" content="Crong's Blog"><meta property="og:title" content="Ben 10 - Srdnlen CTF 2025"><meta property="og:description" content="You can directly go to Solution if you don’t want to see my process for solving this challenge. Introduction This is the first time I’ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn’t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.
+BlackBox approach First Glance When going to the target site I got an option to either Signup, Login, or Forgot Password"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="timeline"><meta property="article:published_time" content="2025-01-23T00:00:00+00:00"><meta property="article:modified_time" content="2025-01-23T00:00:00+00:00"><meta property="article:tag" content="Web"><meta property="article:tag" content="Codereview"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ben 10 - Srdnlen CTF 2025"><meta name=twitter:description content="You can directly go to Solution if you don’t want to see my process for solving this challenge. Introduction This is the first time I’ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn’t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.
+BlackBox approach First Glance When going to the target site I got an option to either Signup, Login, or Forgot Password"><link rel=canonical href=https://blog.datsuraku147.org/timeline/ben-10/><link href=/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://blog.datsuraku147.org/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><meta name=color-scheme content="light dark"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme=dark class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://blog.datsuraku147.org/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+</a><input type=checkbox id=menu-trigger class=menu-trigger>
+<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/categories/>Categories</a></li><li><a class=menu-link href=/tags/>Tags</a></li><li><a class="menu-link active" href=/timeline/>Timeline</a></li><li><a class=menu-link href=/crong/>Me???</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
+<svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Ben 10 - Srdnlen CTF 2025</h1><div class=post-meta><time datetime=2025-01-23T00:00:00+00:00 itemprop=datePublished>Jan 23, 2025</time></div></header><details class=toc zgotmplz><summary><b>Table of Contents</b></summary><nav id=TableOfContents><ul><li><ul><li><a href=#you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge>You can directly go to Solution if you don’t want to see my process for solving this challenge.</a></li></ul></li><li><a href=#introduction>Introduction</a></li><li><a href=#blackbox-approach>BlackBox approach</a><ul><li><a href=#first-glance>First Glance</a></li><li><a href=#signing-up-with-admin-username>Signing up with admin username</a></li><li><a href=#forgot-password>Forgot Password</a></li></ul></li><li><a href=#whitebox-approach>WhiteBox approach</a><ul><li><a href=#looking-for-the-admin-username>Looking for the Admin username</a></li><li><a href=#apppy>App.py</a></li></ul></li><li><a href=#solution>Solution</a></li><li><a href=#lessons-learned>Lessons Learned</a></li></ul></nav></details><div class=page-content><h3 id=you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge>You can directly go to <a href=#solution>Solution</a> if you don&rsquo;t want to see my process for solving this challenge.</h3><h2 id=introduction>Introduction</h2><p>This is the first time I&rsquo;ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn&rsquo;t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.</p><h2 id=blackbox-approach>BlackBox approach</h2><h3 id=first-glance>First Glance</h3><p>When going to the target site I got an option to either <code>Signup, Login, or Forgot Password</code></p><p><img src=/images/Ben10-0.png alt="Image Description">
+<em><strong>Figure 1</strong></em></p><p>Since I don&rsquo;t have an account yet, I signed up first. And after I logged in using the account I created I was taken to a page that has a bunch of different images.</p><p><img src=/images/Ben10-1.png alt="Image Description">
+<em><strong>Figure 2</strong></em></p><p>Clicking directly on an image redirects me to a page of the image I clicked. But for the last(10th) image I got an error saying: <code>Only Admins can access Ben10!</code></p><p><img src=/images/Ben10-2.png alt="Image Description">
+<em><strong>Figure 3</strong></em></p><p><strong>With this I assumed that I needed to takeover an admin account named <code>admin</code> and that the 10th image would give me the flag.</strong></p><h3 id=signing-up-with-admin-username>Signing up with admin username</h3><p>But there is no need for a takeover if we can just sign up as an admin right?
+So I tried to sign up using <code>admin</code> as a <code>username</code> but had no luck, so I moved to another feature.</p><p><img src=/images/Ben10-3.png alt="Image Description">
+<em><strong>Figure 4</strong></em></p><h3 id=forgot-password>Forgot Password</h3><p>Trying this feature immediately gives a red flag. It gives us a reset token after giving a <code>username</code> I want to recover</p><p><img src=/images/Ben10-4.png alt="Image Description">
+<em><strong>Figure 5</strong></em></p><p>Then clicking the <code>Reset your password</code> redirects me to a page that asks for a <code>Username</code> and a <code>New Password</code></p><h4 id=how-it-works>How it works?</h4><ol><li>Asks for a <code>username</code></li><li>Gives a <code>reset token</code></li><li>Asks again for a <code>username</code> and a <code>new password</code></li></ol><p>This was a good indicator for me since it means that I can change whose <code>password</code> I want to change by giving a <code>username</code> I don&rsquo;t own in the last step.</p><p>So I did&mldr;</p><p><img src=/images/Ben10-5.png alt="Image Description">
+<em><strong>Figure 6</strong></em></p><p>What a bummer! I thought it was going to be easy XD</p><p>At least this tells me that it&rsquo;s either there&rsquo;s no username <code>admin</code> or the system just gives this response instead of a <code>403</code> to mislead players :P</p><p>So to test my theory I created a new user and tried to change its password using the <code>Forgot Password</code> feature</p><p><img src=/images/Ben10-6.png alt="Image Description">
+<em><strong>Figure 7</strong></em></p><p>Welp, it seems that there&rsquo;s a permission check&mldr;with this I assumed that we can&rsquo;t use a different username for the first and third step because of the permission check and that the <code>admin</code> username doesn&rsquo;t exist since we didn&rsquo;t get a <code>user not found</code> error.
+But, we are sure that there&rsquo;s an <code>admin</code> because of the error we got from trying to access the 10th image (<em><strong>Figure 3</strong></em>) And the flow is still sketchy to me&mldr;</p><p>Since we were given a source code my next idea is that maybe the <code>admin username</code> is being leaked there.</p><h2 id=whitebox-approach>WhiteBox approach</h2><h3 id=looking-for-the-admin-username>Looking for the Admin username</h3><p>Actually, the reason why I tried doing a <code>Blackbox</code> approach first is because I was scared to look at the source code because I&rsquo;m not really good at doing code reviews XD</p><p>Continuing&mldr;</p><p>The first thing I did was to see if the <code>admin username</code> is being leaked somewhere in the code, and it didn&rsquo;t take a lot of time to find it. When I looked at <code>home.html</code> there it was the <code>secret admin username</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>    &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;display:none;&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;admin_data&#34;</span>&gt; {admin_username} &lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><p>So I checked the page source back in the target site and finally</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;<span style=color:#f92672>h1</span>&gt; Welcome, dats&lt;/<span style=color:#f92672>h1</span>&gt;
+</span></span><span style=display:flex><span>&lt;<span style=color:#f92672>h2</span>&gt; Do you like the aliens on my Omnitrix?&lt;/<span style=color:#f92672>h2</span>&gt;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>&lt;!-- secret admin username --&gt;</span>
+</span></span><span style=display:flex><span> &lt;<span style=color:#f92672>div</span> <span style=color:#a6e22e>style</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;=display:none;&#34;</span> <span style=color:#a6e22e>id</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;admin_data&#34;</span>&gt;admin^dats^1c4cdf3c26&lt;/<span style=color:#f92672>div</span>&gt;
+</span></span></code></pre></div><p>so we now have the <code>admin username</code> &ndash;> <code>admin^dats^1c4cdf3c26</code>. The next step is going to be the last right? I can just request a <code>reset token</code> using the <code>admin^dats^1c4cdf3c26</code> username and we&rsquo;re done, right??? <del>Goodnight and 8 hours of sleep let&rsquo;s go :)</del></p><p>Yeah&mldr;no!!!</p><p><img src=/images/Ben10-7.png alt="Image Description">
+<em><strong>Figure 8</strong></em></p><p>At this point, I just said to myself that I have the code so I should just find the issue in the code so I don&rsquo;t waste more time XD</p><h3 id=apppy>App.py</h3><p>Since I&rsquo;m quite familiar with Python understanding the code was manageable(thankfully)</p><p>I started at the top instead of directly going to the function where the <code>resetting of password</code> is happening. This is because I thought it would be good practice for me to read and understand the code that others wrote :D</p><p>I immediately saw the reason why I was getting the errors before</p><h4 id=register-shortened-code>/register (shortened code)</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>if</span> username<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>&#39;admin&#39;</span>) <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;^&#39;</span> <span style=color:#f92672>in</span> username:
+</span></span><span style=display:flex><span>    flash(<span style=color:#e6db74>&#34;I don&#39;t like admins&#34;</span>, <span style=color:#e6db74>&#34;error&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> render_template(<span style=color:#e6db74>&#39;register.html&#39;</span>)
+</span></span></code></pre></div><h4 id=reset_password-shortened-code>/reset_password (shortened code)</h4><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>if</span> username<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>&#39;admin&#39;</span>):
+</span></span><span style=display:flex><span>    flash(<span style=color:#e6db74>&#34;Admin users cannot request a reset token.&#34;</span>, <span style=color:#e6db74>&#34;error&#34;</span>)
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> render_template(<span style=color:#e6db74>&#39;reset_password.html&#39;</span>)
+</span></span></code></pre></div><p>It checks if the input we give starts with <code>"admin"</code> if it is then it will trigger the error.</p><h4 id=forgot_password-shortened-code>/forgot_password (shortened code)</h4><p>Please check the <code>comments</code> in the code for the explanation :)</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#75715e># It checks if the username doesn&#39;t start with admin</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> username<span style=color:#f92672>.</span>startswith(<span style=color:#e6db74>&#39;admin&#39;</span>):
+</span></span><span style=display:flex><span>    token <span style=color:#f92672>=</span> get_reset_token_for_user(username) <span style=color:#75715e># username = request.form[&#39;username&#39;]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># If TRUE it checks if the reset_token is valid and will be used for the inputted username</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> token <span style=color:#f92672>and</span> token[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> reset_token: <span style=color:#75715e># reset_token = request.form[&#39;reset_token&#39;]</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># If TRUE then it proceeds to reset the password of the variable username</span>
+</span></span><span style=display:flex><span>        update_password(username, new_password)
+</span></span><span style=display:flex><span>        flash(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Password reset successfully.&#34;</span>, <span style=color:#e6db74>&#34;success&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> redirect(url_for(<span style=color:#e6db74>&#39;login&#39;</span>))
+</span></span><span style=display:flex><span>    <span style=color:#75715e># If FALSE then it gives out an error &#34;Invalid reset token for user.&#34;</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        flash(<span style=color:#e6db74>&#34;Invalid reset token for user.&#34;</span>, <span style=color:#e6db74>&#34;error&#34;</span>)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># If however the username starts with admin</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>    <span style=color:#75715e># It splits the username using `^` as a separator</span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Then it gets the second index [1] of the array. Note: the first index is [0]</span>
+</span></span><span style=display:flex><span>    username <span style=color:#f92672>=</span> username<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;^&#39;</span>)[<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span>    token <span style=color:#f92672>=</span> get_reset_token_for_user(username)
+</span></span><span style=display:flex><span>    <span style=color:#75715e># Then it checks if the reset_token is valid and will be used for the inputted username</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> token <span style=color:#f92672>and</span> token[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> reset_token:
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># If TRUE then it proceeds to reset the password however...</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># IMPORTANT: instead of using &#34;username&#34; it uses &#34;request.form[&#39;username&#39;]&#34;</span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># This means that the code will change the password of the unsplit username</span>
+</span></span><span style=display:flex><span>        update_password(request<span style=color:#f92672>.</span>form[<span style=color:#e6db74>&#39;username&#39;</span>], new_password)
+</span></span><span style=display:flex><span>        flash(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Password reset successfully.&#34;</span>, <span style=color:#e6db74>&#34;success&#34;</span>)
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> redirect(url_for(<span style=color:#e6db74>&#39;login&#39;</span>))
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        flash(<span style=color:#e6db74>&#34;Invalid reset token for user.&#34;</span>, <span style=color:#e6db74>&#34;error&#34;</span>)
+</span></span></code></pre></div><p>It might seem confusing so I&rsquo;ll try to show what&rsquo;s going to happen clearly.</p><h4 id=code-flow>Code Flow</h4><h5 id=remember-how-does-forgot-password-work>Remember: How does <code>Forgot Password</code> work?</h5><ol><li>Asks for a <code>username</code></li><li>Gives a <code>reset token</code></li><li>Asks again for a <code>username</code> and a <code>new password</code></li></ol><p><strong>REMINDER!!! We are already in the third step here(<code>/reset_password</code> is responsible for the first and second step)</strong></p><p>Let&rsquo;s say that we used <code>dats</code> in the first step and <code>admin^dats^1c4cdf3c26</code> for the third step</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>    <span style=color:#66d9ef>else</span>:
+</span></span><span style=display:flex><span>        <span style=color:#75715e># admin^dats^1c4cdf3c26 --&gt; dats</span>
+</span></span><span style=display:flex><span>        username <span style=color:#f92672>=</span> username<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#39;^&#39;</span>)[<span style=color:#ae81ff>1</span>] 
+</span></span><span style=display:flex><span>        token <span style=color:#f92672>=</span> get_reset_token_for_user(username)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        <span style=color:#75715e># True since the username is now dats and we used dats in the first step</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> token <span style=color:#f92672>and</span> token[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>==</span> reset_token:
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            <span style=color:#75715e># Instead of using the updated value of the username variable --&gt; &#34;dats&#34;</span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># It uses the value I gave in the third step --&gt; &#34;admin^dats^1c4cdf3c26&#34;</span>
+</span></span><span style=display:flex><span>            update_password(request<span style=color:#f92672>.</span>form[<span style=color:#e6db74>&#39;username&#39;</span>], new_password)
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># And this results in the system changing </span>
+</span></span><span style=display:flex><span>            <span style=color:#75715e># The password of the admin instead of my account :P</span>
+</span></span><span style=display:flex><span>            
+</span></span><span style=display:flex><span>            flash(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Password reset successfully.&#34;</span>, <span style=color:#e6db74>&#34;success&#34;</span>)
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> redirect(url_for(<span style=color:#e6db74>&#39;login&#39;</span>))
+</span></span></code></pre></div><h2 id=solution>Solution</h2><p>All in all, to takeover the account of the <code>admin</code> all we need to do is:</p><ol><li>Leak the <code>username</code> of the <code>admin</code> in our case it&rsquo;s &ndash;> <code>admin^dats^1c4cdf3c26</code></li><li>Request for a <code>reset token</code> using a <code>username</code> we own &ndash;> <code>dats</code></li><li>Get the <code>reset token</code> and proceed to the next page</li><li>Use <code>admin^dats^1c4cdf3c26</code> in the <code>username form</code></li><li>Login using the new credentials of the <code>admin</code> and check the 10th image.</li></ol><p><code>Flag:srdnlen{b3n_l0v3s_br0k3n_4cc355_c0ntr0l_vulns}</code></p><p><img src=/images/Ben10-8.png alt="Image Description">
+<em><strong>Figure 9</strong></em></p><h2 id=lessons-learned>Lessons Learned</h2><ul><li><p>Always doubt your assumptions. Because I wasn&rsquo;t able to change the password of my second account, I assumed that the permission check was there, not thinking to double-check with the username of the admin when I found it. If I did, then I would have already solved the challenge without even looking at the code.</p><p>It&rsquo;s still a win though since I got out of my comfort zone. But in the wild, where we normally don&rsquo;t have the source code handed to us. Doubting our assumptions is definitely beneficial :D</p></li><li><p>The result of reviewing the code was better than I expected. At first, I thought there was no way that I would understand what it was doing but thankfully most of the lines are pretty self-explanatory, and with a little bit <del>(a lot)</del> of Googling, I was able to understand how it was working.</p><ul><li><p>For example, I had no idea at first what the method <code>split</code> was doing, so I tried it myself and figured out that it separates the string based on what the separator is and puts them in an array</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> username <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;ttt^ggg^sss&#34;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> username <span style=color:#f92672>=</span> username<span style=color:#f92672>.</span>split(<span style=color:#e6db74>&#34;^&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> username[<span style=color:#ae81ff>1</span>]
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;ggg&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> username[<span style=color:#ae81ff>2</span>]
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;sss&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> username[<span style=color:#ae81ff>3</span>]
+</span></span><span style=display:flex><span>Traceback (most recent call last):
+</span></span><span style=display:flex><span>File <span style=color:#e6db74>&#34;&lt;stdin&gt;&#34;</span>, line <span style=color:#ae81ff>1</span>, <span style=color:#f92672>in</span> <span style=color:#f92672>&lt;</span>module<span style=color:#f92672>&gt;</span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>IndexError</span>: list index out of range <span style=color:#75715e>## I was even reminded that the index starts in [0] lol</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span> username[<span style=color:#ae81ff>0</span>]
+</span></span><span style=display:flex><span><span style=color:#e6db74>&#39;ttt&#39;</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>&gt;&gt;&gt;</span>
+</span></span></code></pre></div></li></ul></li></ul><p>Thanks to the Sardinia Len team for creating the CTF.</p><p>I hope you enjoyed this write-up. Thanks for reading and have a nice day :D</p><p><em><strong>-Datsuraku147</strong></em></p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=http://github.com/datsuraku147 target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
+</a><a href=https://x.com/MDatsuraku target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
+</a><a href=/index.xml target=_blank rel="noopener noreferrer me" title=Rss><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div><small class=footer_copyright>© 2025 Datsuraku.
+Powered by <a href=https://github.com/hugo-sid/hugo-blog-awesome target=_blank rel=noopener>Hugo blog awesome</a>.</small></footer><a href=# title="Go to top" id=totop><svg width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960"><path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197z"/></svg>
+</a><script src=https://blog.datsuraku147.org/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30+lSNuSkl4QXuNyy8="></script></body></html>
