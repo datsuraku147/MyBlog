@@ -1,20 +1,63 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Timeline on Crong's Blog</title><link>https://blog.datsuraku147.org/timeline/</link><description>Recent content in Timeline on Crong's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.datsuraku147.org/timeline/index.xml" rel="self" type="application/rss+xml"/><item><title>Birthday Card - Pragyan CTF 2025</title><link>https://blog.datsuraku147.org/timeline/birthday-card/</link><pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate><guid>https://blog.datsuraku147.org/timeline/birthday-card/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Timeline on Crong&#39;s Blog</title>
+    <link>http://localhost:1313/timeline/</link>
+    <description>Recent content in Timeline on Crong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/timeline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Birthday Card - Pragyan CTF 2025</title>
+      <link>http://localhost:1313/timeline/birthday-card/</link>
+      <pubDate>Tue, 11 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/birthday-card/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.&lt;/p&gt;
-&lt;h2 id="first-glance"&gt;First glance&lt;/h2&gt;
+&lt;h2 id=&#34;first-glance&#34;&gt;First glance&lt;/h2&gt;
 &lt;p&gt;When I went to the target site, &lt;code&gt;https://birthday.ctf.prgy.in/&lt;/code&gt;, I saw this:&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.datsuraku147.org/images/BirthdayCard-0.png" alt="Image Description"&gt;&lt;/p&gt;
-&lt;p&gt;My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source &lt;code&gt;appy.py&lt;/code&gt;&lt;/p&gt;</description></item><item><title>Ben 10 - Srdnlen CTF 2025</title><link>https://blog.datsuraku147.org/timeline/ben-10/</link><pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.datsuraku147.org/timeline/ben-10/</guid><description>&lt;h3 id="you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge"&gt;You can directly go to &lt;a href="#solution"&gt;Solution&lt;/a&gt; if you don&amp;rsquo;t want to see my process for solving this challenge.&lt;/h3&gt;
-&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/BirthdayCard-0.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
+&lt;p&gt;My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source &lt;code&gt;appy.py&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Ben 10 - Srdnlen CTF 2025</title>
+      <link>http://localhost:1313/timeline/ben-10/</link>
+      <pubDate>Thu, 23 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/ben-10/</guid>
+      
+      <description>&lt;h3 id=&#34;you-can-directly-go-to-solution-if-you-dont-want-to-see-my-process-for-solving-this-challenge&#34;&gt;You can directly go to &lt;a href=&#34;#solution&#34;&gt;Solution&lt;/a&gt; if you don&amp;rsquo;t want to see my process for solving this challenge.&lt;/h3&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;This is the first time I&amp;rsquo;ve tried a CTF with a time limit; unfortunately, I started on the last day, so I couldn&amp;rsquo;t try all of the challenges. Regardless, this challenge was fun as it forced me to do a code review to understand the issue fully.&lt;/p&gt;
-&lt;h2 id="blackbox-approach"&gt;BlackBox approach&lt;/h2&gt;
-&lt;h3 id="first-glance"&gt;First Glance&lt;/h3&gt;
-&lt;p&gt;When going to the target site I got an option to either &lt;code&gt;Signup, Login, or Forgot Password&lt;/code&gt;&lt;/p&gt;</description></item><item><title>KnightCal - KnightCTF 2025</title><link>https://blog.datsuraku147.org/timeline/knightcal/</link><pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate><guid>https://blog.datsuraku147.org/timeline/knightcal/</guid><description>&lt;h2 id="introduction"&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;blackbox-approach&#34;&gt;BlackBox approach&lt;/h2&gt;
+&lt;h3 id=&#34;first-glance&#34;&gt;First Glance&lt;/h3&gt;
+&lt;p&gt;When going to the target site I got an option to either &lt;code&gt;Signup, Login, or Forgot Password&lt;/code&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>KnightCal - KnightCTF 2025</title>
+      <link>http://localhost:1313/timeline/knightcal/</link>
+      <pubDate>Tue, 21 Jan 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/knightcal/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 &lt;p&gt;Hi! For my first write-up, I decided to write about something easy. Enjoy :D&lt;/p&gt;
-&lt;h2 id="first-glance"&gt;First Glance&lt;/h2&gt;
+&lt;h2 id=&#34;first-glance&#34;&gt;First Glance&lt;/h2&gt;
 &lt;p&gt;The target site is pretty simple, we can enter numbers and math expressions then it will calculate the result for us hence the name &amp;ldquo;KnightCal&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;&lt;img src="https://blog.datsuraku147.org/images/KnightCal0.png" alt="Image Description"&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/KnightCal0.png&#34; alt=&#34;Image Description&#34;&gt;
 &lt;em&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id="unnecessary-feature"&gt;Unnecessary Feature???&lt;/h2&gt;
+&lt;h2 id=&#34;unnecessary-feature&#34;&gt;Unnecessary Feature???&lt;/h2&gt;
 &lt;p&gt;If you look at the results it&amp;rsquo;s giving us, we get additional information &lt;strong&gt;&amp;ldquo;File already exists with name: d.txt&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;After playing with it, I concluded that each number represents a certain letter. For example in &lt;em&gt;&lt;strong&gt;Figure 1&lt;/strong&gt;&lt;/em&gt; &lt;code&gt;2 == d.txt&lt;/code&gt;
-When we enter &lt;code&gt;22,&lt;/code&gt; the result is &lt;code&gt;dd.txt.&lt;/code&gt; This means that it concatenates the string based on what the number represents.&lt;/p&gt;</description></item></channel></rss>
+When we enter &lt;code&gt;22,&lt;/code&gt; the result is &lt;code&gt;dd.txt.&lt;/code&gt; This means that it concatenates the string based on what the number represents.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

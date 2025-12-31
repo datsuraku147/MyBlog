@@ -1,7 +1,7 @@
 {
     "name": "Crong's Blog",
     "short_name": "Crong's Blog",
-    "start_url": "https://blog.datsuraku.org/",
+    "start_url": "http://localhost:1313/",
     "theme_color": "#434648",
     "background_color": "#131418",
     "display": "standalone",
