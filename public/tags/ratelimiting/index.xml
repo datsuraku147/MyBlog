@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ratelimiting on Crong&#39;s Blog</title>
+    <link>http://localhost:1313/tags/ratelimiting/</link>
+    <description>Recent content in Ratelimiting on Crong&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/ratelimiting/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Crack the Gate 2 - PicoCTF</title>
+      <link>http://localhost:1313/timeline/crack-the-gate-2/</link>
+      <pubDate>Thu, 01 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/crack-the-gate-2/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hello, I&amp;rsquo;ve decided to grind picoCTF this year :)&lt;/p&gt;
+&lt;p&gt;Unlike my other writeups where I go into detail about my process, for picoCTF challenges, I plan to be straightforward (there might be exceptions) especially for the easy challenges.&lt;/p&gt;
+&lt;h2 id=&#34;solving-the-challenge&#34;&gt;Solving the Challenge&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;We’ve received a tip that the system might still trust user-controlled headers. Your objective is to bypass the rate-limiting restriction and log in using the known email address: &lt;strong&gt;&lt;a href=&#34;mailto:ctf-player@picoctf.org&#34;&gt;ctf-player@picoctf.org&lt;/a&gt;&lt;/strong&gt; and uncover the hidden secret.&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
