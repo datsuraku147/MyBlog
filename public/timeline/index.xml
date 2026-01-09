@@ -6,7 +6,21 @@
     <description>Recent content in Timeline on Crong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 01 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/timeline/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/timeline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>APICrash - Dojo #47 Monthly Challenge for December</title>
+      <link>http://localhost:1313/timeline/apicrash/</link>
+      <pubDate>Sat, 10 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/apicrash/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;This was written last year late December&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Hello :)&lt;/p&gt;
+&lt;p&gt;I haven&amp;rsquo;t published anything in a while, mainly because I got a full-time  job :D yeheyy! One thing I noticed this year is that I&amp;rsquo;m very messy hahaha, not organized at all. Although I like being all over the place because my imagination is at its peak when I&amp;rsquo;m chaotic. I feel like my skills are not improving at all, and I have a hard time remembering topics I&amp;rsquo;ve read, so currently I have no choice but to start being more organized if I want to keep moving forward.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Crack the Gate 2 - PicoCTF</title>
       <link>http://localhost:1313/timeline/crack-the-gate-2/</link>
@@ -15,7 +29,7 @@
       <guid>http://localhost:1313/timeline/crack-the-gate-2/</guid>
       
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Hello, so I&amp;rsquo;ve decided to grind picoCTF this year :)&lt;/p&gt;
+&lt;p&gt;Hello, I&amp;rsquo;ve decided to grind picoCTF this year :)&lt;/p&gt;
 &lt;p&gt;Unlike my other writeups where I go into detail about my process, for picoCTF challenges, I plan to be straightforward (there might be exceptions) especially for the easy challenges.&lt;/p&gt;
 &lt;h2 id=&#34;solving-the-challenge&#34;&gt;Solving the Challenge&lt;/h2&gt;
 &lt;blockquote&gt;

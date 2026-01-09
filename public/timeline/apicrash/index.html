@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">APICrash - Dojo #47 Monthly Challenge for December | Crong&#39;s Blog</title>
+<meta property="og:title" content="APICrash - Dojo #47 Monthly Challenge for December | Crong&#39;s Blog" />
+<meta name="twitter:title" content="APICrash - Dojo #47 Monthly Challenge for December | Crong&#39;s Blog" />
+<meta itemprop="name" content="APICrash - Dojo #47 Monthly Challenge for December | Crong&#39;s Blog" />
+<meta name="application-name" content="APICrash - Dojo #47 Monthly Challenge for December | Crong&#39;s Blog" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Datsuraku&#39;s blog">
+<meta itemprop="description" content="Datsuraku&#39;s blog" />
+<meta property="og:description" content="Datsuraku&#39;s blog" />
+<meta name="twitter:description" content="Datsuraku&#39;s blog" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/timeline/apicrash/" title="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.153.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/timeline/apicrash/">
+  <meta property="og:site_name" content="Crong&#39;s Blog">
+  <meta property="og:title" content="APICrash - Dojo #47 Monthly Challenge for December">
+  <meta property="og:description" content="Introduction This was written late last December.
+Hello :)
+I haven’t published anything in a while, mainly because I got a full-time job :D yeheyy! One thing I noticed this year is that I’m very messy hahaha, not organized at all. Although I like being all over the place because my imagination is at its peak when I’m chaotic. I feel like my skills are not improving at all, and I have a hard time remembering topics I’ve read, so currently I have no choice but to start being more organized if I want to keep moving forward.">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="timeline">
+    <meta property="article:published_time" content="2026-01-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-10T00:00:00+00:00">
+    <meta property="article:tag" content="Web">
+    <meta property="article:tag" content="Graphql">
+    <meta property="article:tag" content="Dojo">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="APICrash - Dojo #47 Monthly Challenge for December">
+  <meta name="twitter:description" content="Introduction This was written late last December.
+Hello :)
+I haven’t published anything in a while, mainly because I got a full-time job :D yeheyy! One thing I noticed this year is that I’m very messy hahaha, not organized at all. Although I like being all over the place because my imagination is at its peak when I’m chaotic. I feel like my skills are not improving at all, and I have a hard time remembering topics I’ve read, so currently I have no choice but to start being more organized if I want to keep moving forward.">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/timeline/apicrash/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+    <meta name="color-scheme" content="light dark">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/categories/">
+                        Categories
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/tags/">
+                        Tags
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/timeline/">
+                        Timeline
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/crong/">
+                        Me???
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">APICrash - Dojo #47 Monthly Challenge for December</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-01-10T00:00:00&#43;00:00" itemprop="datePublished"> Jan 10, 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#discovering-the-challenge">Discovering the Challenge</a></li>
+    <li><a href="#my-approach">My Approach</a>
+      <ul>
+        <li><a href="#reviewing-source-code-2">Reviewing Source Code #2</a></li>
+        <li><a href="#reviewing-source-code-1">Reviewing Source Code #1</a></li>
+        <li><a href="#figuring-out-how-to-update-a-post">Figuring out How to Update a Post</a></li>
+        <li><a href="#updating-a-post-is-cool-but-getting-the-flag-is-cooler">Updating a Post is cool but getting the FLAG is cooler</a></li>
+        <li><a href="#triggering-a-crash">Triggering a crash</a></li>
+      </ul>
+    </li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="introduction">Introduction</h2>
+<p><em>This was written late last December.</em></p>
+<p>Hello :)</p>
+<p>I haven&rsquo;t published anything in a while, mainly because I got a full-time  job :D yeheyy! One thing I noticed this year is that I&rsquo;m very messy hahaha, not organized at all. Although I like being all over the place because my imagination is at its peak when I&rsquo;m chaotic. I feel like my skills are not improving at all, and I have a hard time remembering topics I&rsquo;ve read, so currently I have no choice but to start being more organized if I want to keep moving forward.</p>
+<p>Anyway, I decided to keep a note :O of the things I did to solve this challenge so this is basically my approach and solution in solving YesWeHack&rsquo;s monthly challenge for December 2025.</p>
+<p>Also, if you haven&rsquo;t tried any of the Dojos, I would highly suggest checking out <a href="https://dojo-yeswehack.com/challenge/tutorial">https://dojo-yeswehack.com/challenge/tutorial</a> first.</p>
+<h2 id="discovering-the-challenge">Discovering the Challenge</h2>
+<p>It was late at night, and I was doing my module (was on a deadline :P), but I got bored so I opened Twitter/X on my laptop then started scrolling lol, until YesWeHack&rsquo;s post about the monthly dojo came up in my feed.</p>
+<p>I remember trying so hard to solve the challenge for October &ldquo;<strong><a href="https://dojo-yeswehack.com/challenge-of-the-month/dojo-47">Dojo #45 - Chainfection</a></strong>&rdquo;, and although I was in the right track (based on the published <a href="https://yeswehack.com/dojo/dojo-ctf-challenge-solution-45">writeup</a>), I wasn&rsquo;t able to get the Flag :(</p>
+<p>So I decided to stop doing my module and focus on solving YesWeHack&rsquo;s monthly challenge for December :P</p>
+<p><img src="/images/47-0.png" alt="Image Description"></p>
+<h2 id="my-approach">My Approach</h2>
+<p>YesWeHack&rsquo;s Dojo is more on <strong>whitebox</strong> testing, so I started by gathering all of the available information.</p>
+<ul>
+<li>HTTP Request after entering our input</li>
+<li>Source Code #1 (setup)</li>
+<li>Source Code #2</li>
+</ul>
+<details>
+  <summary>HTTP-Request</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">POST</span> /api/challenges/4620cbe4-08b0-40ed-b293-a1748916c660 <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">dojo-yeswehack.com</span>
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">[...]</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>input=crong
+</span></span></code></pre></div>
+</details>
+<details>
+  <summary>source-code-1.py</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os<span style="color:#f92672">,</span> faker<span style="color:#f92672">,</span> sqlite3
+</span></span><span style="display:flex;"><span>tinydb <span style="color:#f92672">=</span> import_v(<span style="color:#e6db74">&#34;tinydb&#34;</span>, <span style="color:#e6db74">&#34;4.7.1&#34;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#34;/tmp&#34;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>mkdir(<span style="color:#e6db74">&#34;templates&#34;</span>)
+</span></span><span style="display:flex;"><span>db <span style="color:#f92672">=</span> tinydb<span style="color:#f92672">.</span>TinyDB(<span style="color:#e6db74">&#39;data.json&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Set the flag</span>
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#34;FLAG&#34;</span>] <span style="color:#f92672">=</span> flag
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>db<span style="color:#f92672">.</span>insert_multiple([
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;id&#39;</span>: <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#34;First day with the new API!&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;content&#39;</span>: <span style="color:#e6db74">&#34;Just deployed the initial version - endpoints are live and stable so far. Excited to see what breaks first!&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;id&#39;</span>: <span style="color:#ae81ff">2</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#34;Quick performance check&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;content&#39;</span>: <span style="color:#e6db74">&#34;Optimised a few queries today. The response time dropped by nearly 40%.&#34;</span>,
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;id&#39;</span>: <span style="color:#ae81ff">3</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span>: <span style="color:#e6db74">&#34;Minor update pushed&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;content&#39;</span>: <span style="color:#e6db74">&#34;Added better error handling for POST requests and improved logging across the board.&#34;</span>,
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">with</span> open(<span style="color:#e6db74">&#39;templates/index.html&#39;</span>, <span style="color:#e6db74">&#39;w&#39;</span>) <span style="color:#66d9ef">as</span> f:
+</span></span><span style="display:flex;"><span>    f<span style="color:#f92672">.</span>write(<span style="color:#e6db74">&#39;&#39;&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;!DOCTYPE html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;html lang=&#34;en&#34; class=&#34;bg-gray-950 text-gray-100&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;meta charset=&#34;UTF-8&#34; /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;meta
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      name=&#34;viewport&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      content=&#34;width=840, height=565, initial-scale=1.0, maximum-scale=1.0&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;title&gt;Pro API&lt;/title&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;script src=&#34;https://cdn.tailwindcss.com&#34;&gt;&lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      html,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      body {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        width: 100%;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        height: 100%;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        margin: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        overflow: hidden;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      main {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        height: calc(100% - 90px);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        overflow-y: auto;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        scrollbar-width: thin;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        scrollbar-color: #334155 #020617;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      .stars-container {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        pointer-events: none;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      .star {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        position: absolute;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        text-align: center;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        align-items: center;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        justify-items: center;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        border-radius: 9999px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        font-size: 26px;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        animation-name: fall;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        animation-timing-function: linear;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        animation-iteration-count: infinite;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      @keyframes fall {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        0% {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          transform: translateY(0);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          opacity: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        10% {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          opacity: 0.9;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        90% {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          opacity: 0.9;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        100% {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          transform: translateY(110vh); /* past the bottom */
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          opacity: 0;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      @keyframes twinkle {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        0%,
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        100% {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          transform: scale(1);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          opacity: 0.7;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        50% {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          transform: scale(1.8);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          opacity: 1;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/style&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/head&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;body class=&#34;font-mono text-emerald-50 relative overflow-hidden&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;!-- Starry background with twinkling stars --&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;div
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      id=&#34;stars-container&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      class=&#34;absolute inset-0 z-0 pointer-events-none&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;&lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;header
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      class=&#34;relative z-10 border-b border-emerald-800/60 px-4 py-3 flex justify-between items-center bg-emerald-950/80 backdrop-blur&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;div class=&#34;flex items-center space-x-3&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          class=&#34;text-[10px] px-2 py-1 rounded-full bg-emerald-800/60 text-emerald-200 border border-emerald-600/60&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          Version: v1.33.7
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          class=&#34;inline-flex items-center text-[10px] px-2 py-1 rounded-full bg-red-700/70 text-red-50 border border-red-400/70&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &amp;#x1F384; Holiday Edition
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;h1
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        class=&#34;text-xl font-bold text-emerald-300 flex items-center space-x-2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span&gt;Pro API web interface&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/h1&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/header&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;main class=&#34;relative z-10 max-w-full px-4 py-3 space-y-3&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;!-- getPosts --&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;section
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        class=&#34;bg-slate-950/80 rounded-lg border border-emerald-800/70 shadow-lg shadow-emerald-900/40&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;button
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          class=&#34;w-full text-left px-4 py-3 flex justify-between items-center hover:bg-emerald-950/60 rounded-t-lg transition-colors&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          onclick=&#34;toggleSection(&#39;getposts&#39;)&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;div class=&#34;flex items-center&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              class=&#34;bg-emerald-500 text-emerald-950 text-[10px] px-2 py-1 rounded mr-2 border border-emerald-300&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              GET
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span class=&#34;font-semibold text-sm text-emerald-100&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &gt;/api/getposts&lt;/span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              class=&#34;ml-2 text-[10px] text-emerald-300 flex items-center gap-1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;span&gt;&amp;#x1F381;&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;span&gt;Fetch all festive posts&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;svg
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;icon-getposts&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            xmlns=&#34;http://www.w3.org/2000/svg&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;h-4 w-4 text-emerald-300 transform transition-transform&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            fill=&#34;none&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            viewBox=&#34;0 0 24 24&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            stroke=&#34;currentColor&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;path
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              stroke-linecap=&#34;round&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              stroke-linejoin=&#34;round&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              stroke-width=&#34;2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              d=&#34;M19 9l-7 7-7-7&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/svg&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          id=&#34;body-getposts&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          class=&#34;border-t border-emerald-900/70 p-3 space-y-2 text-xs bg-gradient-to-b from-slate-950/70 to-emerald-950/60&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;p class=&#34;text-emerald-100/90&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Returns a list of all posts. Holiday-ready, of course. &amp;#x1F385;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;p class=&#34;text-emerald-200 font-semibold mt-2&#34;&gt;Example Response:&lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;pre
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;bg-slate-900/80 p-2 rounded text-[11px] text-emerald-300 overflow-x-auto&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {&#34;id&#34;:1,&#34;author&#34;:&#34;james&#34;,&#34;content&#34;:&#34;First post! &amp;#x1F384;&#34;},
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  {&#34;id&#34;:2,&#34;author&#34;:&#34;sarah&#34;,&#34;content&#34;:&#34;Hello snowy world. &amp;#x2744;&#34;}
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">]&lt;/pre
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;button
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;bg-emerald-500 hover:bg-emerald-400 px-3 py-1 rounded text-[11px] text-emerald-950 font-semibold shadow-sm shadow-emerald-900/60 transition-colors&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            onclick=&#34;mockResponse(&#39;getposts&#39;)&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Try it out &amp;#x1F381;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;pre
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;resp-getposts&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;mt-2 bg-slate-900/80 p-2 rounded text-[11px] text-emerald-200 overflow-x-auto&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">{{ posts | safe}}&lt;/pre
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/section&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;!-- updatePost --&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;section
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        class=&#34;bg-slate-950/80 rounded-lg border border-red-800/70 shadow-lg shadow-red-900/40&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;button
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          class=&#34;w-full text-left px-4 py-3 flex justify-between items-center hover:bg-red-950/60 rounded-t-lg transition-colors&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          onclick=&#34;toggleSection(&#39;updatepost&#39;)&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;div class=&#34;flex items-center&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              class=&#34;bg-red-500 text-red-950 text-[10px] px-2 py-1 rounded mr-2 border border-red-300&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              POST
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span class=&#34;font-semibold text-sm text-rose-100&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &gt;/api/updatepost&lt;/span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;span
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              class=&#34;ml-2 text-[10px] text-rose-200 flex items-center gap-1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;span&gt;&amp;#x1F56F;&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              &lt;span&gt;Update a cozy message&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;svg
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;icon-updatepost&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            xmlns=&#34;http://www.w3.org/2000/svg&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;h-4 w-4 text-rose-200 transform transition-transform&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            fill=&#34;none&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            viewBox=&#34;0 0 24 24&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            stroke=&#34;currentColor&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            &lt;path
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              stroke-linecap=&#34;round&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              stroke-linejoin=&#34;round&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              stroke-width=&#34;2&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">              d=&#34;M19 9l-7 7-7-7&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/svg&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;div
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          id=&#34;body-updatepost&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          class=&#34;hidden border-t border-red-900/70 p-3 space-y-2 text-xs bg-gradient-to-b from-slate-950/70 to-red-950/60&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;p class=&#34;text-rose-100/90&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Updates a post&#39;s content by ID. Perfect for last-minute holiday
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            edits. &amp;#x2728;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/p&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;label class=&#34;block text-rose-100 text-xs mt-1&#34;&gt;ID:&lt;/label&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;input
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;id&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            type=&#34;number&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            placeholder=&#34;e.g. 1&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;w-full bg-slate-900/80 p-1.5 rounded border border-rose-700/70 text-xs text-rose-50 placeholder:text-rose-300/60&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          /&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;label class=&#34;block text-rose-100 text-xs mt-1&#34;&gt;Content:&lt;/label&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;textarea
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;content&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            placeholder=&#34;Updated festive content...&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;w-full bg-slate-900/80 p-1.5 rounded border border-rose-700/70 text-xs text-rose-50 placeholder:text-rose-300/60&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;&lt;/textarea&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;button
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;bg-red-500 hover:bg-red-400 px-3 py-1 rounded text-[11px] text-red-950 font-semibold shadow-sm shadow-red-900/60 transition-colors&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            Try it out &amp;#x1F384;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;/button&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &lt;pre
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            id=&#34;resp-updatepost&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">            class=&#34;hidden mt-2 bg-slate-900/80 p-2 rounded text-[11px] text-rose-200 overflow-x-auto&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          &gt;&lt;/pre&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/section&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/main&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;footer
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      class=&#34;relative z-10 text-center text-[10px] text-emerald-300 border-t border-emerald-800/60 py-2 bg-emerald-950/80 backdrop-blur&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;div class=&#34;flex items-center justify-center gap-2</span><span style="color:#e6db74">&#34;&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span&gt;2025 Pro developer team&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span class=&#34;text-xs&#34;&gt;-&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        &lt;span&gt;Wishing you safe &amp;amp; secure holidays &amp;#x1F381;&amp;#x1F510;&lt;/span&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      &lt;/div&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/footer&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      function toggleSection(id) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        const body = document.getElementById(&#34;body-&#34; + id);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        const icon = document.getElementById(&#34;icon-&#34; + id);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        body.classList.toggle(&#34;hidden&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        icon.classList.toggle(&#34;rotate-180&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      function mockResponse(endpoint) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        const responseElement = document.getElementById(&#34;resp-&#34; + endpoint);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        responseElement.classList.remove(&#34;hidden&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      function generateStars(count) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        const container = document.getElementById(&#34;stars-container&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        for (let i = 0; i &lt; count; i++) {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          const star = document.createElement(&#34;span&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.classList.add(&#34;star&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.innerText = Math.floor(Math.random() * 2);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          // Random position
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          const top = Math.random() * 100;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          const left = Math.random() * 100;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          // Random size (1.5 - 3.5px)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          const size = 1.5 + Math.random() * 2;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          // Random animation duration + delay
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          const duration = 2.5 + Math.random() * 2;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          const delay = Math.random() * 2;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.style.top = top + &#34;%&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.style.left = left + &#34;%&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.style.width = size + &#34;px&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.style.height = size + &#34;px&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.style.animationDuration = duration + &#34;s&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          star.style.animationDelay = delay + &#34;s&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">          container.appendChild(star);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      }
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      // Create stars once the page loads
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      window.addEventListener(&#34;DOMContentLoaded&#34;, () =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        generateStars(100); // Change this number to control density
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      });
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      window.addEventListener(&#34;DOMContentLoaded&#34;, () =&gt; {
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        mockResponse(&#34;getposts&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">      });
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">    &lt;/script&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  &lt;/body&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&lt;/html&gt;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;&#39;&#39;</span><span style="color:#f92672">.</span>strip())
+</span></span></code></pre></div>
+</details>
+<details>
+  <summary>source-code-2.py</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os<span style="color:#f92672">,</span> json<span style="color:#f92672">,</span> tinydb<span style="color:#f92672">,</span> graphene<span style="color:#f92672">,</span> threading
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> urllib.parse <span style="color:#f92672">import</span> unquote
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> jinja2 <span style="color:#f92672">import</span> Environment, FileSystemLoader
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>template <span style="color:#f92672">=</span> Environment(
+</span></span><span style="display:flex;"><span>    autoescape<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span>    loader<span style="color:#f92672">=</span>FileSystemLoader(<span style="color:#e6db74">&#39;/tmp/templates&#39;</span>),
+</span></span><span style="display:flex;"><span>)<span style="color:#f92672">.</span>get_template(<span style="color:#e6db74">&#39;index.html&#39;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#39;/tmp&#39;</span>)
+</span></span><span style="display:flex;"><span>threads <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span>db <span style="color:#f92672">=</span> tinydb<span style="color:#f92672">.</span>TinyDB(<span style="color:#e6db74">&#39;data.json&#39;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Define a proper Post type so Graphene knows the structure</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Post</span>(graphene<span style="color:#f92672">.</span>ObjectType):
+</span></span><span style="display:flex;"><span>    id <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>Int()
+</span></span><span style="display:flex;"><span>    content <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>String()
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GraphqlQuery</span>(graphene<span style="color:#f92672">.</span>ObjectType):
+</span></span><span style="display:flex;"><span>    get_posts <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>List(Post)
+</span></span><span style="display:flex;"><span>    update_post <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>Boolean(id<span style="color:#f92672">=</span>graphene<span style="color:#f92672">.</span>Int(), content<span style="color:#f92672">=</span>graphene<span style="color:#f92672">.</span>String())
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_post_in_db</span>(id, content):
+</span></span><span style="display:flex;"><span>        node <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>search(tinydb<span style="color:#f92672">.</span>Query()<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> int(id))
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> node <span style="color:#f92672">==</span> []:
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">False</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>            node[<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;content&#39;</span>] <span style="color:#f92672">=</span> content
+</span></span><span style="display:flex;"><span>            db<span style="color:#f92672">.</span>update(node[<span style="color:#ae81ff">0</span>], tinydb<span style="color:#f92672">.</span>Query()<span style="color:#f92672">.</span>id <span style="color:#f92672">==</span> int(id))
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">True</span>
+</span></span><span style="display:flex;"><span>            
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">resolve_update_post</span>(self, info, id, content):
+</span></span><span style="display:flex;"><span>        t <span style="color:#f92672">=</span> threading<span style="color:#f92672">.</span>Thread(target<span style="color:#f92672">=</span>GraphqlQuery<span style="color:#f92672">.</span>update_post_in_db, args<span style="color:#f92672">=</span>[id, content])
+</span></span><span style="display:flex;"><span>        t<span style="color:#f92672">.</span>start()
+</span></span><span style="display:flex;"><span>        threads<span style="color:#f92672">.</span>append(t)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">resolve_get_posts</span>(self, info):
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> db<span style="color:#f92672">.</span>all()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">main</span>():
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># User input (GraphQL query)</span>
+</span></span><span style="display:flex;"><span>    query <span style="color:#f92672">=</span> unquote(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    schema <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>Schema(query<span style="color:#f92672">=</span>GraphqlQuery)
+</span></span><span style="display:flex;"><span>    schema<span style="color:#f92672">.</span>execute(query)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Wait for all GraphQL processes to finish</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> threads:
+</span></span><span style="display:flex;"><span>        t<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> schema<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;{ getPosts { id content } }&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check if the JSON in the posts are malformed</span>
+</span></span><span style="display:flex;"><span>    posts <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># TODO : Random crashes appear time to time with same input, but different error. We working on a fix.</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>errors:
+</span></span><span style="display:flex;"><span>        posts <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#34;FLAG&#34;</span>: os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#34;FLAG&#34;</span>]}, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>        posts <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(result<span style="color:#f92672">.</span>data, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    print(template<span style="color:#f92672">.</span>render(posts<span style="color:#f92672">=</span>posts))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>main()
+</span></span></code></pre></div>
+</details>
+<h3 id="reviewing-source-code-2">Reviewing Source Code #2</h3>
+<p>The first idea that I thought of is to search for the word &ldquo;<code>FLAG</code>&rdquo;.</p>
+<p>Line 54:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># TODO : Random crashes appear time to time with same input, but different error. We working on a fix.</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>errors:
+</span></span><span style="display:flex;"><span>	posts <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps({<span style="color:#e6db74">&#34;FLAG&#34;</span>: os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#34;FLAG&#34;</span>]}, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span>	posts <span style="color:#f92672">=</span> json<span style="color:#f92672">.</span>dumps(result<span style="color:#f92672">.</span>data, indent<span style="color:#f92672">=</span><span style="color:#ae81ff">2</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(template<span style="color:#f92672">.</span>render(posts<span style="color:#f92672">=</span>posts))
+</span></span></code></pre></div><p>Wow, this looks easy, I just need <code>result.errors</code> to return <code>true</code> and the application will print the <code>FLAG</code>&hellip;but I don&rsquo;t know how to reach that line&hellip;yet. Next, I noticed that there are comments in the code, so I noted them all down.</p>
+<ul>
+<li><strong>Define a proper Post type so Graphene knows the structure</strong> (L.13)</li>
+<li><strong>User input (GraphQL query)</strong> (L.40)</li>
+<li><strong>Wait for all GraphQL processes to finish</strong> (L.46)</li>
+<li><strong>Check if the JSON in the posts are malformed</strong> (L.51)</li>
+<li><strong>TODO : Random crashes appear time to time with same input, but different error. We working on a fix.</strong> (L.54)</li>
+</ul>
+<p>These gives me a lot of information on what to work and focus on. First, I now know that the application uses something called &ldquo;Graphene&rdquo;, where the input is going (GraphQL query, and usage of threads, and a very big clue. The end goal is to get a crash, so I can reach the Line that will dump the <code>FLAG</code>.</p>
+<p>These information gives me multiple ideas:</p>
+<ul>
+<li><strong>does this thing called &ldquo;Graphene&rdquo; have a known security issue&hellip;maybe a CVE?</strong></li>
+<li><strong>Threading? Race Conditions?</strong></li>
+<li><strong>Trace the flow of the input and figure out how to trigger a crash?</strong></li>
+</ul>
+<p>Figuring out how to trigger a crash seems to be the best and fastest way right now, because 1. There is no mention of the version of &ldquo;Graphene&rdquo; so I don&rsquo;t have any idea on what CVE to look for, 2. Testing for race conditions blindly would be a disadvantage because I already have the code.</p>
+<p>so I started reading&hellip;<strong>A LOT!!!</strong></p>
+<p>A quick Google Search of <code>graphene result.error</code> leads me to Graphene&rsquo;s documentation <a href="https://docs.graphene-python.org/en/latest/execution/execute/">https://docs.graphene-python.org/en/latest/execution/execute/</a>.</p>
+<blockquote>
+<p><code>result</code> represents the result of execution. <code>result.data</code> is the result of executing the query, <code>result.errors</code> is <code>None</code> if no errors occurred, and is a non-empty list if an error occurred.</p>
+</blockquote>
+<p>Aha, my assumptions were correct! and from here, I continued to read the code starting from below, to get an idea on how I can trigger a crash.</p>
+<p>Line 40:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>    <span style="color:#75715e"># User input (GraphQL query)</span>
+</span></span><span style="display:flex;"><span>    query <span style="color:#f92672">=</span> unquote(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    schema <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>Schema(query<span style="color:#f92672">=</span>GraphqlQuery)
+</span></span><span style="display:flex;"><span>    schema<span style="color:#f92672">.</span>execute(query)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Wait for all GraphQL processes to finish</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> threads:
+</span></span><span style="display:flex;"><span>        t<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>    result <span style="color:#f92672">=</span> schema<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;{ getPosts { id content } }&#34;</span>)
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># Check if the JSON in the posts are malformed</span>
+</span></span><span style="display:flex;"><span>    posts <span style="color:#f92672">=</span> {}
+</span></span></code></pre></div><p>Cool, now I know that <code>result</code> is the response of the <code>getPosts</code> operation&hellip;but I still have no idea how to trigger a crash.</p>
+<h3 id="reviewing-source-code-1">Reviewing Source Code #1</h3>
+<p>At this point, I decided to take a look at the setup code.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> os<span style="color:#f92672">,</span> faker<span style="color:#f92672">,</span> sqlite3
+</span></span><span style="display:flex;"><span>tinydb <span style="color:#f92672">=</span> import_v(<span style="color:#e6db74">&#34;tinydb&#34;</span>, <span style="color:#e6db74">&#34;4.7.1&#34;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>chdir(<span style="color:#e6db74">&#34;/tmp&#34;</span>)
+</span></span><span style="display:flex;"><span>os<span style="color:#f92672">.</span>mkdir(<span style="color:#e6db74">&#34;templates&#34;</span>)
+</span></span><span style="display:flex;"><span>db <span style="color:#f92672">=</span> tinydb<span style="color:#f92672">.</span>TinyDB(<span style="color:#e6db74">&#39;data.json&#39;</span>)
+</span></span></code></pre></div><p>Whenever I see an application importing something with a certain version, my first idea is to always check that version and see if there are any known security issue for it.</p>
+<p>So&hellip;I did. I searched for things like &ldquo;Tinydb 4.7.1 CVE&rdquo;, &ldquo;Tinydb 4.7.1 security issue&rdquo;, &ldquo;Tinydb 4.7.1 security vulnerability&rdquo;, and eventually landed on <a href="https://medium.com/@deadoverflow/dear-backend-developers-dont-use-tinydb-for-your-python-web-servers-940adc1c8d1d">https://medium.com/@deadoverflow/dear-backend-developers-dont-use-tinydb-for-your-python-web-servers-940adc1c8d1d</a>.</p>
+<p>This seems a very good lead since the author talks about &ldquo;DoS/Data corruption&rdquo;, and they even linked a Github issue <a href="https://github.com/msiemens/tinydb/issues/529">https://github.com/msiemens/tinydb/issues/529</a>.</p>
+<blockquote>
+<p>If an attacker sends few requests to update the node with it&rsquo;s corresponding id within a second or 2 the last byte of the database, in this case, &ldquo;data.json&rdquo; would be replaced by a NULL byte thus triggering an internal server error and the web application is unusable from that point on.</p>
+</blockquote>
+<p>Nice, this is super great, now I know that it may be possible to trigger a crash if I update a node super fast.</p>
+<h4 id="trying-hard-copycat-lol">Trying hard copycat lol</h4>
+<p>Yehey!!! so I tried to copy the author&rsquo;s PoC + because of the UI, I sent a bunch of requests to <strong>/api/getposts</strong> and <strong>/api/updatepost</strong>, but the requests returned 404. So I thought I needed to figure out the correct path.</p>
+<p><img src="/images/47-1.png" alt="Image Description"></p>
+<p><em>Trust me!!! I 100% did not waste an evening and morning trying to find the correct path T_T.</em></p>
+<h3 id="figuring-out-how-to-update-a-post">Figuring out How to Update a Post</h3>
+<p>After a lot of frustration xD, I realized that I&rsquo;m super dumb :P</p>
+<p>Source Code #2:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">GraphqlQuery</span>(graphene<span style="color:#f92672">.</span>ObjectType):
+</span></span><span style="display:flex;"><span>    get_posts <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>List(Post)
+</span></span><span style="display:flex;"><span>    update_post <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>Boolean(id<span style="color:#f92672">=</span>graphene<span style="color:#f92672">.</span>Int(), content<span style="color:#f92672">=</span>graphene<span style="color:#f92672">.</span>String())
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>[<span style="color:#f92672">...</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># User input (GraphQL query)</span>
+</span></span><span style="display:flex;"><span>query <span style="color:#f92672">=</span> unquote(<span style="color:#e6db74">&#34;&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>schema <span style="color:#f92672">=</span> graphene<span style="color:#f92672">.</span>Schema(query<span style="color:#f92672">=</span>GraphqlQuery)
+</span></span><span style="display:flex;"><span>schema<span style="color:#f92672">.</span>execute(query)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wait for all GraphQL processes to finish</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> t <span style="color:#f92672">in</span> threads:
+</span></span><span style="display:flex;"><span>	t<span style="color:#f92672">.</span>join()
+</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> schema<span style="color:#f92672">.</span>execute(<span style="color:#e6db74">&#34;{ getPosts { id content } }&#34;</span>)
+</span></span></code></pre></div><p>The input is being passed to <code>schema.execute()</code>, and looking at the <code>result</code> variable, I figured I can do the same thing for updating a post.</p>
+<h4 id="why-getposts-and-not-get_posts">Why getPosts and not get_posts???</h4>
+<p>Fun little knowledge, I was curious as to why it is using <code>getPosts</code> instead of <code>get_posts</code> as stated in the <code>GraphqlQuery</code> class. Turns out, according to Graphene&rsquo;s <a href="https://docs.graphene-python.org/en/latest/types/objecttypes/">documentation for objecttypes</a>:</p>
+<blockquote>
+<p>Graphene automatically camelcases fields on <em>ObjectType</em> from <code>field_name</code> to <code>fieldName</code> to conform with GraphQL standards.</p>
+</blockquote>
+<p>As a result, it converts <code>get_posts</code> to <code>getPosts</code>, and the same conversion applies to <code>update_post</code>, which becomes <code>updatePost</code>.</p>
+<p>Let&rsquo;s gooo! I was super excited, because I finally discovered how to use the <code>update_post</code> operation, so I excitedly modified <code>getPosts</code> to be <code>updatePost</code>, and followed my instinct to add values to <code>id</code> and <code>content</code>.</p>
+<p>But&hellip;it wasn&rsquo;t working :( The content is still the same. Grrrrrrrrrrr!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{ updatePost { id<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span> content<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span> } }
+</span></span></code></pre></div><p><img src="/images/47-2.png" alt="Image Description"></p>
+<p><em>Why is it not working? T_T I ask myself.</em></p>
+<p>Guess what&hellip;I&rsquo;m really super dumb hahahaha.</p>
+<p><del>After some suffering,</del> I discovered this thing called &ldquo;arguments&rdquo;&hellip;wow, crazy lmao :P</p>
+<ul>
+<li><a href="https://spec.graphql.org/draft/#sec-Language.Arguments">https://spec.graphql.org/draft/#sec-Language.Arguments</a></li>
+<li><a href="https://graphql.org/learn/queries/">https://graphql.org/learn/queries/</a></li>
+</ul>
+<p>A simple structure is like:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  picture(width: <span style="color:#ae81ff">200</span>, height: <span style="color:#ae81ff">100</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>following this, I crafted:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{ updatePost(id:<span style="color:#ae81ff">1</span>, content:<span style="color:#e6db74">&#34;test&#34;</span>) }
+</span></span></code></pre></div><p><strong>and&hellip;yeheyyyy! I was finally able to update a post, and it only took me 3 minutes after I started the challenge <del>so much suffering T_T</del>.</strong></p>
+<p><img src="/images/47-3.png" alt="Image Description"></p>
+<h3 id="updating-a-post-is-cool-but-getting-the-flag-is-cooler">Updating a Post is cool but getting the FLAG is cooler</h3>
+<p>Now that I&rsquo;m able to update a post, I went back to <a href="https://github.com/msiemens/tinydb/issues/529">https://github.com/msiemens/tinydb/issues/529</a>. The plan is to make a PoC using the <code>updatePost</code> operation, similar to the author&rsquo;s PoC to trigger a crash.</p>
+<p>So I did&hellip;but it wasn&rsquo;t working&hellip;I keep on getting rate-limited. WTFFFFFFF!</p>
+<p><img src="/images/47-4.png" alt="Image Description"></p>
+<p>I had two ideas, either I need to bypass the rate-limiting or my whole approach is wrong, <del>and I&rsquo;m basically fucked! Because, I just spent so much time figuring out how to fucking update a post AND I still can&rsquo;t get the fucking FLAG.</del></p>
+<p>Welp&hellip; <del>after a lot of headbanging on the wall</del> after a relaxing walk outside, I found a light, my grace, my saviour, the answer that will save me from this suffering.</p>
+<p>Remember how I first discovered the challenge? The Twitter thingy? It actually gives us a hint.</p>
+<blockquote>
+<p>We published an API-focused CTF challenge that you can complete entirely in your browser!</p>
+</blockquote>
+<p>And so, based on this information, it&rsquo;s enough to say that my approach is 100% wrong hahahahaha <del>fuck</del>. Well, at least I can now stop creating scripts and forget about bypassing the rate-limit.</p>
+<p><em>How TF do I crash this thing? T_T I ask myself again.</em></p>
+<h3 id="triggering-a-crash">Triggering a crash</h3>
+<p>Well, there&rsquo;s only one way to find out <del>and it&rsquo;s quite easy,</del> read the motherfucking documentation T_T.</p>
+<p>Without wasting your time, let&rsquo;s just say I stumbled upon this page almost instantly&hellip; like, 1 minute after <del>crying</del> realizing that I should continue reading the docs: <a href="https://graphql.org/learn/security/#breadth-and-batch-limiting">https://graphql.org/learn/security/#breadth-and-batch-limiting</a></p>
+<blockquote>
+<p>In addition to limiting operation depth, there should also be guardrails in place to limit the number of top-level fields and field aliases included in a single operation.</p>
+<p>Consider what would happen during the execution of the following query operation:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>query {
+</span></span><span style="display:flex;"><span>  viewer {
+</span></span><span style="display:flex;"><span>    friends1: friends(limit: <span style="color:#ae81ff">1</span>) { name }
+</span></span><span style="display:flex;"><span>    friends2: friends(limit: <span style="color:#ae81ff">2</span>) { name }
+</span></span><span style="display:flex;"><span>    friends3: friends(limit: <span style="color:#ae81ff">3</span>) { name }
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># ...</span>
+</span></span><span style="display:flex;"><span>    friends100: friends(limit: <span style="color:#ae81ff">100</span>) { name }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Even though the overall depth of this query is shallow, the underlying data source for the API will still have to handle a large number of requests to resolve data for the aliased <code>hero</code> field.</p>
+</blockquote>
+<p>&ldquo;handle large number of request&rdquo;&hellip;hmmm interesting. The behaviour is similar to the PoC in <a href="https://github.com/msiemens/tinydb/issues/529">https://github.com/msiemens/tinydb/issues/529</a>, but this time, it&rsquo;s possible that we only need 1 request?</p>
+<p>So, I looked into <a href="https://graphql.org/learn/queries/#aliases">Aliases</a>, and from my understanding, it&rsquo;s just like a variable in coding where instead of:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>var friends <span style="color:#f92672">=</span> query
+</span></span></code></pre></div><p>we have:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>friends: query
+</span></span></code></pre></div><p>Now, I followed the idea from <a href="https://graphql.org/learn/security/#breadth-and-batch-limiting">Breadth &amp; Batch Limiting page</a>; multiple aliases calling the same field in one request.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    a: updatePost (id:<span style="color:#ae81ff">1</span>, content:<span style="color:#e6db74">&#34;thisiscrong&#34;</span>)
+</span></span><span style="display:flex;"><span>    b: updatePost (id:<span style="color:#ae81ff">1</span>, content:<span style="color:#e6db74">&#34;thisiscrong&#34;</span>)
+</span></span><span style="display:flex;"><span>    c: updatePost (id:<span style="color:#ae81ff">1</span>, content:<span style="color:#e6db74">&#34;thisiscrong&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>and&hellip;wait for it&hellip;I finally get a crash, along with the <code>FLAG</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">FLAG{M4ke_It_Cr4sh_Th3y_Sa1d?!}
+</span></span></span></code></pre></div><p><img src="/images/47-5.png" alt="Image Description"></p>
+<p><img src="/images/47-6.png" alt="Image Description"></p>
+<p>Thanks a lot to <a href="https://x.com/Brumens2">@Brumens</a> for creating this fun challenge.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li>
+<p><a href="https://github.com/msiemens/tinydb/issues/529">https://github.com/msiemens/tinydb/issues/529</a></p>
+</li>
+<li>
+<p><a href="https://medium.com/@deadoverflow/dear-backend-developers-dont-use-tinydb-for-your-python-web-servers-940adc1c8d1d">https://medium.com/@deadoverflow/dear-backend-developers-dont-use-tinydb-for-your-python-web-servers-940adc1c8d1d</a></p>
+</li>
+<li>
+<p><a href="https://docs.graphene-python.org/en/latest/execution/execute/">https://docs.graphene-python.org/en/latest/execution/execute/</a></p>
+</li>
+<li>
+<p><a href="https://docs.graphene-python.org/projects/django/en/latest/schema/">https://docs.graphene-python.org/projects/django/en/latest/schema/</a></p>
+</li>
+<li>
+<p><a href="https://docs.graphene-python.org/en/latest/types/schema/">https://docs.graphene-python.org/en/latest/types/schema/</a></p>
+</li>
+<li>
+<p><a href="https://docs.graphene-python.org/en/latest/types/objecttypes/">https://docs.graphene-python.org/en/latest/types/objecttypes/</a></p>
+</li>
+<li>
+<p><a href="https://spec.graphql.org/draft/#sec-Language.Arguments">https://spec.graphql.org/draft/#sec-Language.Arguments</a></p>
+</li>
+<li>
+<p><a href="https://graphql.org/learn/queries/">https://graphql.org/learn/queries/</a></p>
+</li>
+<li>
+<p><a href="https://graphql.org/learn/security/#breadth-and-batch-limiting">https://graphql.org/learn/security/#breadth-and-batch-limiting</a></p>
+</li>
+<li>
+<p><a href="https://graphql.org/learn/queries/#aliases">https://graphql.org/learn/queries/#aliases</a></p>
+</li>
+</ul>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="http://github.com/datsuraku147" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/MDatsuraku" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2026 Datsuraku.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

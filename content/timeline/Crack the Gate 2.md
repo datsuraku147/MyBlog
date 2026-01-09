@@ -5,10 +5,11 @@ categories: CTF
 tags:
   - ratelimiting
   - picoCTF
+  - web
 ---
 ## Introduction
 
-Hello, so I've decided to grind picoCTF this year :)
+Hello, I've decided to grind picoCTF this year :)
 
 Unlike my other writeups where I go into detail about my process, for picoCTF challenges, I plan to be straightforward (there might be exceptions) especially for the easy challenges.
 
