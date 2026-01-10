@@ -1,6 +1,6 @@
 ---
 title: "APICrash - Dojo #47 Monthly Challenge for December"
-publishDate: 2026-01-10
+date: 2026-01-10
 categories: CTF
 tags:
   - web
