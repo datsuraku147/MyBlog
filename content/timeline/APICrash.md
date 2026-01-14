@@ -1,5 +1,5 @@
 ---
-title: "APICrash - Dojo #47 Monthly Challenge for December"
+title: "APICrash - Dojo #47 Monthly Challenge for December 2025"
 date: 2026-01-10
 categories: CTF
 tags:
@@ -532,7 +532,7 @@ os.mkdir("templates")
 db = tinydb.TinyDB('data.json')
 ```
 
-Whenever I see an application importing something with a certain version, my first idea is to always check that version and see if there are any known security issue for it. 
+Whenever I see an application importing something with a cetain version, my first idea is to always check that version and see if there are any known security issue for it. 
 
 So...I did. I searched for things like "Tinydb 4.7.1 CVE", "Tinydb 4.7.1 security issue", "Tinydb 4.7.1 security vulnerability", and eventually landed on [https://medium.com/@deadoverflow/dear-backend-developers-dont-use-tinydb-for-your-python-web-servers-940adc1c8d1d](https://medium.com/@deadoverflow/dear-backend-developers-dont-use-tinydb-for-your-python-web-servers-940adc1c8d1d).
 
@@ -549,7 +549,7 @@ Yehey!!! so I tried to copy the author's PoC \+ because of the UI, I sent a bunc
 
 *Trust me!!! I 100% did not waste an evening and morning trying to find the correct path T_T.*
 
-### Figuring out How to Update a Post
+### Figuring out how to update a post
 
 After a lot of frustration xD, I realized that I'm super dumb :P
 
@@ -573,7 +573,7 @@ for t in threads:
 result = schema.execute("{ getPosts { id content } }")
 ```
 
-The input is being passed to `schema.execute()`, and looking at the `result` variable, I figured I can do the same thing for updating a post. 
+The input is being passed to `schema.execute()`, and looking at the `result` variable, I figured I can do the same thing for updating a post.
 
 #### Why getPosts and not get_posts???
 
@@ -628,11 +628,9 @@ So I did...but it wasn't working...I keep on getting rate-limited. WTFFFFFFF!
 
 ![Image Description](/images/47-4.png)
 
-I had two ideas, either I need to bypass the rate-limiting or my whole approach is wrong, ~~and I'm basically fucked! Because, I just spent so much time figuring out how to fucking update a post AND I still can't get the fucking FLAG.~~
+I had two ideas, either I need to bypass the rate-limiting or my whole approach is wrong~~, and I'm basically fucked! Because, I just spent so much time figuring out how to fucking update a post AND I still can't get the fucking FLAG.~~
 
-Welp... ~~after a lot of headbanging on the wall~~ after a relaxing walk outside, I found a light, my grace, my saviour, the answer that will save me from this suffering.
-
-Remember how I first discovered the challenge? The Twitter thingy? It actually gives us a hint.
+Welp... ~~after a lot of headbanging on the wall~~ after a relaxing walk outside, I found a light, my grace, my saviour, the answer that will save me from this suffering. Remember how I first discovered the challenge? The Twitter thingy? It actually gives us a hint.
 
 > We published an API-focused CTF challenge that you can complete entirely in your browser!
 
@@ -648,8 +646,7 @@ Well, there's only one way to find out ~~and it's quite easy,~~ read the motherf
 Without wasting your time, let's just say I stumbled upon this page almost instantly... like, 1 minute after ~~crying~~ realizing that I should continue reading the docs: https://graphql.org/learn/security/#breadth-and-batch-limiting
 
 > In addition to limiting operation depth, there should also be guardrails in place to limit the number of top-level fields and field aliases included in a single operation.
->
-> Consider what would happen during the execution of the following query operation:
+Consider what would happen during the execution of the following query operation:
 > 
 > ```python
 > query {

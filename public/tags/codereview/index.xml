@@ -6,7 +6,24 @@
     <description>Recent content in Codereview on Crong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/codereview/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 14 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/codereview/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Challenges Writeup for Scarlet CTF 2026</title>
+      <link>http://localhost:1313/timeline/scarlet-ctf-2026/</link>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/scarlet-ctf-2026/</guid>
+      
+      <description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;/h1&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;This is my writeup for the challenges that I was able to solve(except for 1 :P)&lt;/p&gt;
+&lt;p&gt;I was only able to solve 4 of them lmao, 100% skill issue T_T&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/0.png&#34; alt=&#34;Image Description&#34;&gt;&lt;/p&gt;
+&lt;p&gt;You can check the official writeups at &lt;a href=&#34;https://github.com/scarlet-ctf/writeups/blob/main/2026/BINEX/speedjournal/exploit.py&#34;&gt;https://github.com/scarlet-ctf/writeups/blob/main/2026/BINEX/speedjournal/exploit.py&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Also, just to add, the screenshots used for this writeup was only taken today, because I forgot to take them before (dumb me). Thankfully, the challenges still seems to be up, but you can&amp;rsquo;t submit a flag now&amp;hellip;and here I thought I could cheat and solve all of them (this is a joke btw lol)&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Birthday Card - Pragyan CTF 2025</title>
       <link>http://localhost:1313/timeline/birthday-card/</link>
