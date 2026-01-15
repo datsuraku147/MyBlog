@@ -10,7 +10,7 @@ tags:
 
 ## Introduction
 
-*This was written late last December.*
+*This was written late last December*
 
 Hello :)
 
@@ -628,7 +628,7 @@ So I did...but it wasn't working...I keep on getting rate-limited. WTFFFFFFF!
 
 ![Image Description](/images/47-4.png)
 
-I had two ideas, either I need to bypass the rate-limiting or my whole approach is wrong~~, and I'm basically fucked! Because, I just spent so much time figuring out how to fucking update a post AND I still can't get the fucking FLAG.~~
+I had two ideas, either I need to bypass the rate-limiting or my whole approach is wrong ~~and I'm basically fucked! Because, I just spent so much time figuring out how to fucking update a post AND I still can't get the fucking FLAG.~~
 
 Welp... ~~after a lot of headbanging on the wall~~ after a relaxing walk outside, I found a light, my grace, my saviour, the answer that will save me from this suffering. Remember how I first discovered the challenge? The Twitter thingy? It actually gives us a hint.
 
