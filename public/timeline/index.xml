@@ -6,7 +6,21 @@
     <description>Recent content in Timeline on Crong&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 15 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/timeline/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 26 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/timeline/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3v@l - PicoCTF</title>
+      <link>http://localhost:1313/timeline/3v@l/</link>
+      <pubDate>Mon, 26 Jan 2026 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/timeline/3v@l/</guid>
+      
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;Hello,&lt;/p&gt;
+&lt;p&gt;This is going to be a super short writeup(because I have a work tomorrow T_T) for the &lt;strong&gt;3v@l&lt;/strong&gt; challenge on &lt;strong&gt;picoCTF&lt;/strong&gt;. I actually didn&amp;rsquo;t have any plan to write about this challenge, but I think my solution is super silly and overkill, so might as well share hehe.&lt;/p&gt;
+&lt;p&gt;I solved it by getting a &lt;em&gt;reverse shell&lt;/em&gt; on the server T_T and I&amp;rsquo;m sure that&amp;rsquo;s not the &lt;strong&gt;intended&lt;/strong&gt; solution.&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>Challenges Writeup for Scarlet CTF 2026</title>
       <link>http://localhost:1313/timeline/scarlet-ctf-2026/</link>
